@@ -18,13 +18,63 @@
         body{
             font-family: 'Noto Sans KR', sans-serif;
         }
+
+        /* header */
+        .header_wrap{
+            width: 1440px;
+            margin: 0 auto;
+        }
+        .header_wrap>h1{
+            width: 168px;
+            line-height: 60px;
+            float: left;
+        }
+        .navbar{
+            width: 540px;
+            float: right;
+        }
+        .navbar>ul>li{
+            float: left;
+            width: 25%;
+        }
+        .navbar>ul>li>a{
+            display: block;
+            line-height: 60px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        /* visual */
+        .visual_wrap{
+            height: 643px;
+            background-image: url(images/210616_bg.jpg);
+        }
+        .visual{
+            width: 1440px;
+            margin: 0 auto;
+            height: 643px;
+        }
+        .visual>h2{
+            font-size: 50px;
+            color: #fff;
+            padding-top: 230px;
+        }
+
+        /* section */
+        section{
+            background-color: pink;
+            width: 1440px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
     </style>
 </head>
 <body>
-    <header class="header_wrap">
+    <header class="header_wrap clearfix">
         <h1><a href="#"><img src="images/logo.png" alt=""></a></h1>
         <nav class="navbar">
-            <ul>
+            <ul class="clearfix">
                 <li><a href="#">아마존 입점</a></li>
                 <li><a href="#">알리바바 입점</a></li>
                 <li><a href="#">쇼핑몰 제작</a></li>
@@ -32,6 +82,12 @@
             </ul>
         </nav>
     </header>
+    <div class="visual_wrap">
+        <div class="visual">
+            <h2>중소벤처기업진흥공단<br>온라인수출지원사업</h2>
+        </div>
+    </div>
+    <section class="section"></section>
  
 
 </body>
