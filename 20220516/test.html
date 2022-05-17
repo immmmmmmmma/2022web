@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* initial reset  */
+        *{margin: 0;padding:0}
+
+        *{color:red}
+        
+        div{color:blue}  /* 1 */
+        div.han1{color:green} /* 10 */
+        #han{color:skyblue} /* 100 */
+
+        .han1{color:black}
+
+        /* * < tag < class < id < inline style */
+        .tred{color:red;}
+        .tred.tbold{font-weight:bold}
+
+        div.box{
+            width:100px;height:100px;
+            background-color:#ff0000;
+            /* margin-left: auto;
+            margin-right: auto; */
+
+            margin:0 auto;
+        }
+        div.box1{
+           height: 100px;width: 100%;
+           background-color: #0f0;
+        }
+
+        header#hd{
+            width: 1200px;height: 100px;
+            margin: 0 auto;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    hanyong5
+    <div id="han" class="han1">
+        han
+    </div>
+    <div class="han1 " style="color:orange">
+        han
+    </div>
+
+    <div>
+        Lorem <span class="tred">ipsum</span>  dolor <span class="tred tbold">sit</span> amet.
+    </div>
+
+    <div class="box"></div>
+    <div class="box1"></div>
+
+    <header id="hd"></header>
+    
+    
+</body>
+</html>

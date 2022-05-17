@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            /* reset */
+            *{margin: 0;padding: 0;}
+            li{list-style: none;}
+            .clearfix:after{content: "";display: block;clear: both;}
+            /* header.header_wrap>nav.navbar>ul:after{
+                content: "";display: block;clear: both;
+            }
+            header.header_wrap::after{
+                content: "";display: block;clear: both;
+            } 
+            body에도 div/ul 등 해당되는 곳에 class를 추가 시켜 지정*/
+            
+            
+            /* header */
+        header.header_wrap{
+            width: 1000px;
+            margin: 0 auto;
+            background-color: goldenrod;
+        }
+        header.header_wrap>h1{
+            background-color: bisque;
+            width: 150px;
+            line-height : 100px;;
+            /* line-height는 줄간격; */
+            text-align:center;
+            float: left;
+        }
+        header.header_wrap>nav.navbar{
+            width: 700px;
+            float: right;
+            background-color: navajowhite;
+        }
+        /* .navbar li */
+        header.header_wrap>nav.navbar>ul>li{
+            float: left;
+            width: 25%;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        /* visual */
+        .visual{
+            height: 400px;
+            background-color: peru;
+        }
+        /* section */
+        .section{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .section>.contents{
+            width: 750px;
+            height: 500px;
+            background-color: gray;
+            float: left;
+        }
+        .section>.aside{
+            width: 240px;
+            height: 500px;
+            background-color: antiquewhite;
+            float: right;
+        }
+        
+        /* footer */
+        .footer{
+            background-color: #eee;
+            padding: 20px 0 40px;
+        }
+        .footer>address{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header class="header_wrap clearfix">
+        <h1>LOGO</h1>
+        <nav class="navbar">
+            <ul class="clearfix">
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="visual"></div>
+    <section class="section clearfix">
+        <div class="contents"></div>
+        <aside class="aside"></aside>
+    </section>
+    <footer class="footer">
+        <address>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, reiciendis?</address>
+    </footer>
+</body>
+</html>

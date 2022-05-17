@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            /* reset */
+            *{margin: 0 auto; padding: 0;}
+            .clearfix:after{content: "";display: block;clear: both;}
+            li{list-style: none;}
+
+            /* header */
+            header.header_wrap{
+                width: 1000px;
+                margin: 0 auto;
+                background-color: cornflowerblue;
+            }
+            .header_wrap>h1{
+                width: 300px;
+                margin: 0 auto;
+                background-color: olive;
+                text-align: center;
+                line-height: 50px;
+            }
+            .header_wrap>.navbar{
+                width: 1000px;
+                /* background-color: seagreen; */
+            }
+            .header_wrap>.navbar>ul>li{
+                width: 25%;
+                float: left;
+                background-color: darkcyan;
+                text-align: center;
+                line-height: 50px;
+            }
+
+            /* visual */
+            .visual{
+                height: 100px;
+                background-color: lightcoral;
+            }
+
+            /* section */
+            .section{
+                width: 1000px;
+                margin: 0 auto;
+            }
+            .section>.contents{
+                width: 600px;
+                height: 400px;
+                background-color: darkslategrey;
+                float: left;
+            }
+            .section>.aside{
+                width: 200px;
+                height: 400px;
+                background-color: darkslateblue;
+                float: right;
+            }
+
+            /* footer */
+            .footer{
+                background-color: gray;
+                padding: 30px 0;
+            }
+            .footer>address{
+                width: 1000px;
+                margin: 0 auto;
+            }
+
+        </style>
+    </head>
+
+<body>
+    <header class="header_wrap clearfix">
+        <h1>LOGO</h1>
+        <nav class="navbar">
+            <ul class="clearfix">
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="visual"></div>
+    <section class="section clearfix">
+        <div class="contents"></div>
+        <aside class="aside"></aside>
+    </section>
+    <footer class="footer">
+        <address>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, doloremque.</address>
+    </footer>
+</body>
+</html>

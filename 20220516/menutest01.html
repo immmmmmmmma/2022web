@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none;}
+
+        div.header_wrap{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        div.header_wrap>h1{
+            width: 1200px;
+            height: 50px;
+            float: left;
+            text-align: center;
+            background-color: blanchedalmond;
+        }
+        div.header_wrap>h1{
+            content: "";display: block;clear: both;
+        }
+
+        div.header_wrap>div.menu{
+            width: 1200px;
+            background-color:rosybrown;
+        }
+        div.header_wrap>div.menu>ul>li{
+            width: 20%;
+            float: left;
+            text-align: center;
+        }
+        div.header_wrap>div.menu>ul:after{
+            content: "";display: block; clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header_wrap">
+        <h1>logo</h1>
+        <div class="menu">
+            <ul>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+                <li>menu5</li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
