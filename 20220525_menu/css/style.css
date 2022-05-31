@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+.nav_wrap{background-color: #1D5DA4;}
+.nav_wrap .nav{width: 980px;margin: 0 auto;}
+.nav_wrap .nav li{
+    float: left;width: calc( 980px / 6 );
+    border-left: 1px solid #326EAC;
+}
+.nav_wrap .nav li:last-child{border: 1px solid #326EAC;}
+.nav_wrap .nav li a{
+    display: block;color: #fff;
+    line-height: 45px;text-align: center;
+}
+.nav_wrap .nav ul li a:hover{background-color: royalblue;}
+
+/*
+    position: absolute; 
+    top: 50%; left: 50%;
+    margin-left: -50px; margin-top: -50px;
+    left: calc( 50% - 50px );
+    top: calc( 50% -50px );
+/* 중앙 정렬시키는 방법 2가지 position 과 flex */
+ /* display: flex;justify-content: center;align-items: center; */
+
+ .util_wrap{border-bottom: 1px solid #000; margin-bottom: 20px;}
+ .util{width: 980px;margin: 0 auto;}
+ .util_menu{float: right;}
+ .util_menu li{float: left;position: relative;}
+ .util_menu li:after{
+     content: "";display: block;width: 1px;height: 10px;background-color: #dcdcdc;
+     position: absolute;right: 0;top: 7px;
+    }
+ .util_menu li:last-child::after{display: none;}
+ .util_menu li a{display: block;font-size: 12px;line-height: 12px;padding: 7px 15px;}
+ 
