@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+    .container{width: 1000px;margin: 0 auto;}
+
+    /* cont1st */
+    .container.con1st li{
+        float: left; width: calc( ( 100% - 20px * 2 ) / 3 );margin-right: 20px;
+ 
+    }
+    .container.con1st li:last-child{margin-right: 0;}
+    .container.con1st li:hover .card{
+        transform: translate(0,-20px) ;
+        box-shadow: 0 1em 1em rgba(0, 0, 0, 0.3);
+   }
+
+   /* con2nd */
+
+   .container.con2nd li{
+        float: left; width: calc( ( 100% - 20px * 2 ) / 3 );margin-right: 20px;
+ 
+    }
+    .container.con2nd li:last-child{margin-right: 0;}
+
+
+    .container.con2nd li:hover img{
+        transform: scale(1.2);
+    }
+
+    .container.con2nd li:hover .card{
+        transform: translate(0,-20px) ;
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+    }
+
+
+    .card{
+        border-radius: 10px; overflow: hidden;
+
+        transition: 0.4s;
+    }
+
+    .card img{width: 100%;}
+    .card .card_body{padding: 1em 1em; background: #eee;}
+    .card_body h3{margin-bottom: 10px;}
+
+    .py30{padding: 30px 0 !important;}
+    .cgray{background-color: #eee !important;}
+    .csky{background-color: skyblue !important;}
+
+</style>
+<body>
+    <div class="py30">
+        <div class="container con1st">
+            <ul class="clearfix">
+                <li>
+                    <div class="card">
+                        <img src="../images/testimg.jpg" alt="">
+                        <div class="card_body cgray">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <img src="../images/testimg.jpg" alt="">
+                        <div class="card_body cgray">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <img src="../images/testimg.jpg" alt="">
+                        <div class="card_body cgray">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="py30">
+        <div class="container con2nd">
+            <ul class="clearfix">
+                <li>
+                    <div class="card">
+                        <img src="../images/testimg.jpg" alt="">
+                        <div class="card_body csky">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <img src="../images/testimg.jpg" alt="">
+                        <div class="card_body csky">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <img src="../images/testimg.jpg" alt="">
+                        <div class="card_body csky">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
