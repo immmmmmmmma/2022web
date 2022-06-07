@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{height: 100%;}
+        /* 또는 body에 100vh */
+        body{
+            display:flex;justify-content: center;align-items: center;
+        }
+        .box_wrap{
+            background-color: #6592CF;
+            width: 400px;height: 300px;
+            margin: 0 auto;
+            display:flex;justify-content: center;align-items: center;
+        }
+        .box{
+            background: #243D83; width: 300px; height: 200px;
+            display:flex;justify-content: center;align-items: center;
+            position: relative;
+        }
+        .box div:nth-child(1){ background: #6592CF;}
+        .box div:nth-child(2){ background: #243D83;}
+        .box div:nth-child(3){ background: #EEB850;}
+        .clr1{
+            width: 250px; height: 250px;
+            border-radius: 125px;position: absolute;
+        }
+        .clr2{
+            width: 150px; height: 150px;
+            border-radius: 75px;position: absolute;
+        }
+        .clr3{
+            width: 50px; height: 50px;
+            border-radius: 25px; position: absolute;
+        }
+
+        
+        
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="box_wrap">
+            <div class="box">
+                <div class="clr1"></div>
+                <div class="clr2"></div>
+                <div class="clr3"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
