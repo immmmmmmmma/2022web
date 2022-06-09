@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" class="css">
+    <style>
+        h1{
+            width: 440px;;height:105px;
+            background-image: url(../images/sprite_naver.png);
+            background-position: 0 -322px;
+            margin: 0 auto;
+        }
+        h1 a{
+            display: block;height: 105px;
+            text-indent:-99999px
+            /* 들여쓰기 */
+        }
+        .navbar{margin: 0 auto; width: 980px;}
+        .navbar li{
+            width: 140px;height: 50px;
+            float: left;
+            background-image: url(../images/sprites.png);
+            transition: 0.3s;
+        }
+        .navbar li a{display: block;height: 50px;text-indent: -9999px;}
+        .navbar li:nth-child(2){background-position: -140px 0;}
+        .navbar li:nth-child(3){background-position: -280px 0;}
+        .navbar li:nth-child(4){background-position: -420px 0;}
+        .navbar li:nth-child(5){background-position: -560px 0;}
+        .navbar li:nth-child(6){background-position: -700px 0;}
+        .navbar li:nth-child(7){background-position: -840px 0;}
+
+        .navbar li:hover{background-position: 0 -50px;}
+        .navbar li:nth-child(2):hover{background-position: -140px -50px;}
+        .navbar li:nth-child(3):hover{background-position: -280px -50px;}
+        .navbar li:nth-child(4):hover{background-position: -420px -50px;}
+        .navbar li:nth-child(5):hover{background-position: -560px -50px;}
+        .navbar li:nth-child(6):hover{background-position: -700px -50px;}
+        .navbar li:nth-child(7):hover{background-position: -840px -50px;}
+
+        .navbar li:nth-child(1) .active{background-position: 0 0;}
+        .navbar li:nth-child(2) .active{background-position: -140px 0;}
+        .navbar li:nth-child(3) .active{background-position: -280px 0;}
+        .navbar li:nth-child(4) .active{background-position: -420px 0;}
+        .navbar li:nth-child(5) .active{background-position: -560px 0;}
+        .navbar li:nth-child(6) .active{background-position: -700px 0;}
+        .navbar li:nth-child(7) .active{background-position: -840px 0;}
+    </style>
+</head>
+<body>
+    <!-- <h1><a href="#" onclick="return false">네이버</a></h1>
+    <nav class="navbar">
+        <ul class="clearfix">
+            <li class="active"><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+            <li><a href="#">menu5</a></li>
+            <li><a href="#">menu6</a></li>
+            <li><a href="#">menu7</a></li>
+        </ul>
+    </nav> -->
+
+</body>
+</html>
