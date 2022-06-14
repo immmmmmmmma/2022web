@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+</head>
+<style>
+    .nav_wrap{width: 1200px; margin: 0 auto;z-index: 1;position: relative;}
+    .navbar>ul>li{
+        float: left;background-color: goldenrod;
+        width: calc( 100% / 4 );height: 40px;
+    }
+    .navbar>ul>li>a{
+        display: flex;justify-content: center;align-items: center;
+        height: 100%;height: 40px;
+        transition: 0.5s;
+    }
+    .navbar>ul>li>a:hover{background-color: firebrick;}
+    .navbar>ul>li:hover{background-color: salmon;}
+    .navbar>ul>li:hover .submenu{
+        background-color:aquamarine;
+        opacity: 1;visibility: visible;
+        transform: translateY(0);
+    }
+    .submenu{
+        background-color: skyblue;border-radius: 0 0 5px 5px;
+        opacity: 0;visibility: hidden;
+        transform: translateY(10px);
+    }
+    .submunu li:hover{background-color: goldenrod;}
+    .submunu li a{display: block;line-height: 40px;text-align: center;}
+    .submenu li:hover a{color:#000;}
+
+</style>
+<body>
+    <div class="nav_wrap">
+        <nav class="navbar">
+            <ul class="clearfix">
+                <li>
+                    <a href="#">menu1</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">sub01</a></li>
+                            <li><a href="#">sub02</a></li>
+                            <li><a href="#">sub03</a></li>
+                            <li><a href="#">sub04</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">menu2</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">sub01</a></li>
+                            <li><a href="#">sub02</a></li>
+                            <li><a href="#">sub03</a></li>
+                            <li><a href="#">sub04</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">menu3</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">sub01</a></li>
+                            <li><a href="#">sub02</a></li>
+                            <li><a href="#">sub03</a></li>
+                            <li><a href="#">sub04</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">menu4</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">sub01</a></li>
+                            <li><a href="#">sub02</a></li>
+                            <li><a href="#">sub03</a></li>
+                            <li><a href="#">sub04</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+</body>
+</html>

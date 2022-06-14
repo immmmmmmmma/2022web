@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery.bxslider.css">
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery.bxslider.js"></script>
+    <style>
+        .submenu{display: none;}
+
+        .navWrap{width: 1000px;margin: 0 auto;position: relative;z-index: 1;}
+        .nav>ul>li{
+            float: left;width: calc( 100% / 5 );
+            height: 40px;background-color: #ddd
+        }
+        /* 높이 값을 넣어줬을때와 안 넣었을 때의 차이를 유념 */
+        .nav>ul>li>a{
+            display: flex;justify-content: center;align-items: center;
+            height: 100%;
+            /* transition: 0.3s; */
+        }
+
+        .nav>ul>li>a:hover{background-color:#fff;}
+        /* .nav>ul:hover .submenu{display: block;} */
+        /* ul에 hover값을 취했을 때 li에 hover값을 취했을 때 차이를 기억하자 */
+        .nav>ul>li:hover .submenu{
+            background-color: #fff;
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .submenu{
+            background-color: skyblue;border-radius: 0 0 5px 5px;
+            transform: translateY(10px);opacity: 0;visibility: hidden;
+        }
+        .submenu li a{
+            display: block; font-size: 14px; line-height: 40px;text-align: center;
+        }
+
+        .visual{}
+        .visual .slide img{width: 100%;}
+
+        .bx-wrapper {
+            -moz-box-shadow: 0 0 0 #ccc;
+            -webkit-box-shadow: 0 0 0 #ccc;
+            box-shadow: 0 0 0 #ccc;
+            border: 0 none;
+        }
+        
+
+
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".slide").bxSlider();
+            
+        });
+    </script>
+</head>
+<body>
+    <!-- header/nav/section/aside/article/footer/address -->
+    <div class="navWrap">
+        <nav class="nav">
+            <ul class="clearfix">
+                <li>
+                    <a href="#">menu1</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">s01_01</a></li>
+                            <li><a href="#">s01_02</a></li>
+                            <li><a href="#">s01_03</a></li>
+                            <li><a href="#">s01_04</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">menu2</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">s02_01</a></li>
+                            <li><a href="#">s02_02</a></li>
+                            <li><a href="#">s02_03</a></li>
+                            <li><a href="#">s02_04</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">menu3</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">s03_01</a></li>
+                            <li><a href="#">s03_02</a></li>
+                            <li><a href="#">s03_03</a></li>
+                            <li><a href="#">s03_04</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">menu4</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">s04_01</a></li>
+                            <li><a href="#">s04_02</a></li>
+                            <li><a href="#">s04_03</a></li>
+                            <li><a href="#">s04_04</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">menu5</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="#">s05_01</a></li>
+                            <li><a href="#">s05_02</a></li>
+                            <li><a href="#">s05_03</a></li>
+                            <li><a href="#">s05_04</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+    <div class="visual">
+        <ul class="slide">
+            <li><img src="../images/pc01.jpg" alt=""></li>
+            <li><img src="../images/pc02.jpg" alt=""></li>
+            <li><img src="../images/pc03.jpg" alt=""></li>
+        </ul>
+    </div>
+
+
+    <style>
+        .box1{width: 100px;height: 100px;background-color: #0ff;}
+        .box2{width: 100px;height: 100px;background-color: #0f0;}
+    </style>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    
+</body>
+</html>
