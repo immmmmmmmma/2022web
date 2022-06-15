@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        html,body{height: 100%;}
+        body{
+            background: linear-gradient(135.03deg, #A18CD1 0%, #FBC2EB 99.5%);
+            display: flex;justify-content: center;align-items: center;
+        }
+        .box{
+            width: 300px;height: 300px;position: relative;
+            cursor: pointer;overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3s);
+            transition: 0.3s;
+        }
+        .box .bg{
+            width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3);
+            position: absolute;top: 0;left: 0;
+            transition: 0.3s;
+            display: flex;justify-content: center;align-items: center;
+            color: #fff;
+        }
+        .box img{transition: 0.3s;}
+        .box .bar{
+            position: absolute;width: 100%;height: 10px;
+            background-color: #f00;
+            bottom: 0; transition: 0.3s;transform: scaleX(0);
+        }
+        .box:hover .bg{opacity: 0;}
+        .box:hover .circle{ transform: translate(-50%, -50%) rotate(90deg);}
+        .box:hover img{transform: scale(1.2) rotate(-5deg);}
+        .box:hover .bar{transform: scaleX(1);}
+        .box:hover{
+            transform: translate(-10px, -10px);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+
+
+
+        .circle{
+            width: 50px;height: 50px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            position: absolute;left: 50%;top: 50%;
+            transform: translate(-50% -50%);
+            display: flex;justify-content: center;align-items: center;
+        }
+        .circle:before,
+        .circle:after{
+            content:"";display: block;width: 20px;height: 4px;
+            background-color: #fff;
+            border-radius: 2px;position: absolute;
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="circle"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="box">
+        <img src="../images/testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="box">
+        <img src="../images/testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="circle"></div>
+    </div>
+</body>
+</html>
