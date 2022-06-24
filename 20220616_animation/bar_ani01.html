@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" class="css">
+    <style>
+        html,body{height: 100%;}
+        body{display: flex;justify-content: center;align-items: center;}
+        .box_wrap{
+            width: 500px;height: 500px;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        .bar1{
+            width: 20px;height: 20px;background: #f00;
+
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes bar1 {
+            /* from{} */
+            to{width: 100%;}
+        }
+
+        .bar2{
+            width: 20px;height: 20px;background: #00f;
+            position: absolute;right: 0;top: 0;
+
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            animation-delay:3s;
+        }
+
+        @keyframes bar2{
+            to{height: 100%;}
+        }
+
+        .bar3{
+            width: 20px;height: 20px;background: #0f0;
+            position: absolute;right: 0;bottom: 0;
+
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+        @keyframes bar3{
+            to{width: 100%;}
+        }
+
+        .bar4{
+            width: 20px;height: 20px;background: #0ff;
+            position: absolute;left: 0;bottom: 0;
+
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            animation-delay:3s;
+        }
+        @keyframes bar4{
+            to{height: 100%;}
+        }
+
+        .box_wrap:hover .bar1{
+            animation-name: bar1
+        }
+        .box_wrap:hover .bar2{
+            animation-name: bar2
+        }
+        .box_wrap:hover .bar3{
+            animation-name: bar3
+        }
+        .box_wrap:hover .bar4{
+            animation-name: bar4
+        }
+    </style>
+</head>
+<body>
+    <div class="box_wrap">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+    </div>
+    
+</body>
+</html>

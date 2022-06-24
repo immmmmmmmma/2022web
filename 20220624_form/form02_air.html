@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            background-image: url(images/bg02.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /* air의 트랜스레이트 위치 때문에 생긴 스크롤 숨김 */
+        }
+        .wrap{
+            position: absolute;
+            width: 400px;
+        }
+        .img{
+            position: absolute;
+            transform: translateX(200px);
+            /* 스타일이 아닌 보디에서 위치를 조정해줘도 된다 */
+            right: 100px;
+            /* animation-name: bal;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease; */
+            animation: bal 2s infinite alternate;
+        }
+        @keyframes bal{
+            from{transform: translateY(20px);}
+            to{transform: translateY(0px);}
+        }
+        p.title,.icon{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        p.title{
+            left: 20px;
+            line-height: 14px;
+            font-weight: bold;
+            top: calc( 50% -1px );
+        }
+        .icon{
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            right: 10px;
+            border: 1px solid #333;
+        }
+        .inp{
+            width: 400px;
+            height: 50px;
+            text-indent: 90px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5),
+                        -5 -5 10px rgba(0, 0, 0, 0.2);
+        }
+        .inp:focus{
+            outline:none
+        }
+        .air{
+            transform: translate(-300%, 300%);
+            animation: air 3s forwards infinite linear;
+        }
+        @keyframes air{
+            /* from{} 첫값이 이미 주어진 상태*/
+            to{transform: translate(300%, -300%);}
+        }
+    </style>
+</head>
+<body>
+    <img src="images/reallyAir.png" alt="" class="air">
+    <div class="wrap">
+        <p class="title">SEARCH</p>
+        <form action="">
+            <input type="text" name="seach" placeholder="검색어를 입력하세요" class="inp">
+        </form>
+
+        <div class="icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+    <img src="images/content2.png" alt="" class="img">
+
+
+</body>
+</html>
