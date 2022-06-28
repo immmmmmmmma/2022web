@@ -33,7 +33,7 @@ fieldset{
 #header a{
     display: block;
     height: 45px;
-    text-indent: -999px;
+    text-indent: -9999px;
 }
 
 #content .field{
@@ -50,7 +50,8 @@ fieldset{
     font-size: 16px;
     text-indent: 1em;
 }
-#content .field .inp-field:focus{
+#content .field .inp-field:focus,
+#content .field.birth .select:focus{
     outline: none;
 }
 #content .field .icon{
@@ -73,3 +74,73 @@ fieldset{
 #content .field .icon.pass2{
     background-position: 0 -515px;
 }
+
+#content .field.radio{
+    height: 49px;
+}
+#content .field.radio .btn-label{
+    display: block;
+    width: 212px;
+    height: 31px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 9px;
+}
+#content .field.radio .btn-label.male{
+    left: 15px;
+}
+#content .field.radio .btn-label.female{
+    right: 15px;
+}
+#content .field.radio input:nth-child(1):checked ~ label.male{
+    background-color: skyblue;
+} 
+#content .field.radio input:nth-child(2):checked ~ label.female{
+    background-color: skyblue;
+} 
+#content .field.radio input{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+#content .field.birth label{
+    width: 53px;
+    height: 49px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+#content .field.birth input{
+    float: left;
+} 
+#content .field.birth .wall{
+    float: left;
+    width: 0;
+    height: 29px;
+    border-right: 1px solid #cdcdcd;
+    margin-top: 10px;
+    text-indent: -99999px;
+}
+#content .field.birth select{
+    float: left;
+    width: 110px;
+    height: 29px;
+    border: 0 none;
+    font-size: 16px;
+    margin: 0 8px;
+    margin-top: 10px;
+
+}
+
+/* common */
+.w458{width: 458px !important;}
+.w130{width: 130px !important;}
+.w145{width: 145px !important;}
