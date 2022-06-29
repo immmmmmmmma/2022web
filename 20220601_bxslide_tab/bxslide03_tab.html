@@ -5,65 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery.bxslider.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/jquery.bxslider.js"></script>
     <script>
         $(document).ready(function(){
-            $(".slide").bxSlider({
+            var slide = $(".slide").bxSlider({
                 controls:false,
-                pagerCustom:"slide_tap",
-                mode:'vertical'
-            })
-            $(".btnnext").click(function(){
+                pagerCustom:".slideTap",
+                mode:"vertical"
+            });
+            
+            $(".btnNext").click(function(){
                 slide.goToNextSlide()
-            })
-            $(".btnprev").click(function(){
+            });
+            $(".btnPrev").click(function(){
                 slide.goToPrevSlide()
-            })
+            });
 
         });
 
-    </script>
-</head>
 
+
+    </script>
+
+</head>
 <body>
     <div class="visual">
         <ul class="slide">
             <li>
-                <div class="txt_wrap">
-                    <h2>Lorem, ipsum.</h2>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <a href="#" class="btn">more</a>
+                <div class="txtWrap">
+                    <h2>Lorem, ipsum dolor.1</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit1 111. Doloribus, nesciunt.</p>
+                    <a href="#" class="btn">MORE</a>
                 </div>
-                <img src="../images/visual.jpg" alt="">
+                <img src="../images/images01.jpg" alt="">
             </li>
             <li>
-                <div class="txt_wrap">
-                    <h2>Lorem, ipsum.</h2>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <a href="#" class="btn">more</a>
+                <div class="txtWrap">
+                    <h2>Lorem, ipsum dolor.2</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit1 111. Doloribus, nesciunt.</p>
+                    <a href="#" class="btn">MORE</a>
                 </div>
-                <img src="../images/visual.jpg" alt="">
+                <img src="../images/images01.jpg" alt="">
             </li>
             <li>
-                <div class="txt_wrap">
-                    <h2>Lorem, ipsum.</h2>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <a href="#" class="btn">more</a>
+                <div class="txtWrap">
+                    <h2>Lorem, ipsum dolor.3</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit1 111. Doloribus, nesciunt.</p>
+                    <a href="#" class="btn">MORE</a>
                 </div>
-                <img src="../images/visual.jpg" alt="">
+                <img src="../images/images01.jpg" alt="">
             </li>
         </ul>
-        <img src="../images/next.png" alt="" class="btnnext">
-        <img src="../images/prev.png" alt="" class="btnprev">
-        <div class="slide_tap">
-            <a href="#" data-slide-index="0">menu1</a>
-            <a href="#" data-slide-index="1">menu2</a>
-            <a href="#" data-slide-index="2">menu3</a>
-        </div>
+        <img src="../images/next.png" alt="" class="btnNext">
+        <img src="../images/prev.png" alt="" class="btnPrev">
+    </div>
+    <div class="slideTap">
+        <a href="#" data-slide-index="0">menu1</a>
+        <a href="#" data-slide-index="1">menu2</a>
+        <a href="#" data-slide-index="2">menu3</a>
     </div>
 </body>
 </html>
