@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script src="../../js/jquery.bxslider.js"></script>
+</head>
+    <style>
+        .box{width: 400px;}
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            var slide = $(".slide").bxSlider({
+
+            });
+        });
+    </script>
+<body>
+    <h2>박's 성적</h2>
+    <div>국어 : <span class="kor">0</span>점</div>
+    <div>수학 : <span class="math">0</span>점</div>
+    <div>영어 : <span class="eng">0</span>점</div>
+
+    <div class="box">
+        <ul class="score">
+        </ul>
+    </div>
+
+    <script>
+        let han = [80,90,80,100,80];
+        let img = ["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"]
+
+        document.querySelector(".kor").innerHTML = han[0];
+        document.querySelector(".math").innerHTML = han[1];
+        document.querySelector(".eng").innerHTML = han[2];
+
+        let score = "";
+        for(let i=0;i<han.length;i++){
+            // score += "<li>" + han[i] + "</li>";
+            score += "<li><img src='../../images/" + img[i] +"'></li>"
+            score += `<li><img src="../../images/${img[i]}"></li>`
+        }
+
+        console.log(score)
+        document.querySelector(".score").innerHTML = score
+    </script>
+</body>
+</html>
