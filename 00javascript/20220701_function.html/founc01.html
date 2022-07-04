@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <div class="box">
+        <script>
+            funcNameCount(2) //함수 이름 (인자,....) <-호출
+        </script>
+    </div>
+    <div class="box">
+        <script>
+            funcNameCount(3)
+        </script>
+    </div>
+    <div class="box">
+        <script>
+            funcNameCount(4)
+        </script>
+    </div> -->
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+    <script>
+        // function fucNameCount(){
+        //     console.log('ok')
+
+        //     for(let i=2;i<10;i++){
+        //         document.write(` 3 x ${i} = ${3*i}<br>` )
+
+        //     }
+        // }
+        // funcNameCount();
+        // 이 호출값이 있어야 위의 함수들이 출력이 된다
+        // () 반드시 필요
+
+
+        function gugu(gu,name){ // function 함수이름(매개변수,....){}
+            console.log('ok')
+
+            let text = "";
+
+            for(let i=2;i<10;i++){
+                // document.write(` ${gu} x ${i} = ${gu*i}<br>` )
+                text += ` ${gu} x ${i} = ${gu*i}<br>`
+
+            }
+            document.querySelector(name).innerHTML = text
+        }
+
+        gugu(3,"box1")
+        gugu(4,"box2")
+        gugu(5,"box3")
+    </script>
+    
+</body>
+</html>
