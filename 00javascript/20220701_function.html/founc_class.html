@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+</head>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;
+            left: -100%;
+        }
+        #box.view{
+            left: 0;
+            background-color: red;
+        }
+    </style>
+<body>
+    <div class="toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <!-- <div class="toggle1">
+        <i class="fa-solid fa-bars"></i>
+    </div> -->
+
+    <div id="box"></div>
+
+    <script>
+
+        const toggleElem = document.querySelector(".toggle");
+        const boxElem = document.querySelector("#box");
+
+        toggleElem.addEventListener("click",function(){
+            boxElem.classList.toggle("view");
+        
+        })
+
+
+        // document.querySeletor(".toggle").addEventListener("click",function(){
+        //     console.log('click');
+            // document.querySelector("#box").classList.toggle("view");
+            // toggle();
+        // })
+        //아래 와 같은 add 와 remove를 함깨 슬 수 이쓴 toggle 기능이다
+        // document.querySelector(".toggle1").addEventListener("click",function(){
+        //     document.querySelector("#box").classList.remove("view");
+        // })
+        
+        let on = 1;
+
+        $(".toggle1").on("click",function(){
+
+            if( on == 1 ){
+                $("#box").addClass("view");
+                on = 2;
+            }else{
+                $("#box").removeClass("view")
+                on = 1;
+            }
+            // toggleㅡ> show와 hide 
+            // 클릭이라는 이벤트와 함수를 on
+            // 선택자 box 의 attr
+        })
+
+
+
+
+
+
+
+
+
+
+        // 선택자
+    </script>
+    
+</body>
+</html>

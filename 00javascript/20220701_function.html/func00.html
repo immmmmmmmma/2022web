@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 클릭시 해당 함수가 작동 -->
+    <button onclick="fnc('박시현')">버튼</button>
+    <button onclick="fnc('아저씨')">버튼</button>
+    <button class="btn1">버튼</button>
+    <!-- <div onclick="fnc()">버튼</div> -->
+     <!--등 p,a테그에도 사용 가능하다  -->
+    
+     <div><span class="name">1</span>은 자고 싶다</div>
+    <script>
+        // function 작명(){
+
+        // }
+        // 작명()
+        
+        function fnc(name){
+            console.log(name)
+
+            const name = document.querySelector("div span.name");
+            name[0].innerHTML = name;
+            // document.querySelector("div span.name").innerHTML;
+            // document.getElementsByClassName("name")[0].innnerHTML;
+            // document.querySelectorAll("name")[0].innnerHTML;
+
+        }
+        // 이벤트를 넣지않고 class으로 잡아서 이벤트를 추가해줘서 사용할 때 addEv
+        document.querySelector(".btn1").addEventListener("click",function(){
+            fnc("박시현");
+        })
+    </script>
+</body>
+</html>

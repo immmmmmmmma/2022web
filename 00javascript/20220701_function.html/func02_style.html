@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color:skyblue;
+            transition: 0.3s;
+        }
+    </style>
+<body>
+    <button onclick="styleColor()">변형</button>
+    <button onclick="inital()">원형</button>
+    <!-- 버튼 이벤트 함수 -->
+    <div class="box"></div>
+    <script>
+        const boxElem = document.querySelector(".box");
+        //const는 전역변수
+        function styleColor(){
+            boxElem.style.width = "200px";
+            boxElem.style.height = "200px";
+            boxElem.style.backgroundColor = "red";
+            //box Element
+        }
+        function inital(){
+            boxElem.style.width = "100px";
+            boxElem.style.height = "100px";
+            boxElem.style.backgroundColor = "skyblue";
+        }
+    </script>
+</body>
+</html>
