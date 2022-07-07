@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="inp" value="">
+    <button class="btn">저장</button>
+
+    <!-- arr에 저장이 아닌 -->
+    <ul class="view">
+
+    </ul>
+
+    <button class="alldel"></button>
+<!-- 버튼을 클릭시 inp의 값을 arr에 저장 -->
+    <script>
+        // const arr = ["서울", "인천", "경기"]
+
+        // const inpElem = document.querySelector(".inp");
+        // const btnElem = document.querySelector(".btn");
+        // const viewElem = document.querySelector(".view");
+
+        // btnElem.addEventListener("click",function(){
+        //     console.log("safkjhaf" + inpElem.value);
+        //     arr.push(inpElem.value)
+        //     console.log(arr)
+        //     // let text = `<li>${inpElem.value}</li>`;
+        //     // viewElem.innerHTML = text;
+        //     viewElem.append(inpElem.value)
+        //     // append는 텍스트의 형태로 들어간다, 뒤로 드어감
+
+
+        //     const node = 
+        // })
+
+        $(".btn").click(function(){
+            console.log( $("inp").val)
+            arr.push($(".inp").val())
+            console.log(arr)
+
+            let text = `<li>${$(".inp").val()}</li>`;
+
+            $(".view").append(text)
+            $(".inp").val("")
+            // prepend 앞으로 들어감
+
+            // $("alldel").click(function(){
+            //     $(".view").html("")
+            // })
+        })
+
+
+
+    </script>
+</body>
+</html>
