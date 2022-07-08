@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array01_re</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <input type="text" class="inp">
+    <button class="btn">insert</button>
+
+    <ul class="viewData">
+
+    </ul>
+
+    <button class="del">all del</button>
+
+    <script>
+        // 1. input 만들기, button 만들기
+        // 2. button클릭 하여 입력된 자료 배열에 넣기
+        // 3. 화면에 배열자료 출력
+
+        let data = [];
+        const input = document.querySelector(".inp");
+        const btn = document.querySelector(".btn");
+        const viewData = document.querySelector(".viewData");
+        const del = document.querySelector(".del");
+
+        btn.addEventListener("click",function(){
+            let value = input.value;
+            console.log(value)
+
+            data.push(value);
+            input.value = "";
+
+            listData();
+        })
+
+        function listData(){
+            let text = "";
+            for(let i=0;i<data.length;i++){
+                text += `<li>${data[i]} <span>del</span></li>`
+            }
+            viewData.innerHTML = text;
+        }
+
+        del.addEventListener("click",function(){
+            data = [];
+            listData()
+        })
+
+
+
+       
+
+    </script>
+</body>
+</html>

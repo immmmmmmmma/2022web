@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array01_re</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" class="inp" value="">
+    <button class="btn">insert</button>
+
+    <ul class="viewData">
+
+    </ul>
+
+
+    <script>
+        //1. input, button 만들기
+        //2. button 클릭해서 입력된 자료 배열에 넣기
+        //3. 화면에 배열 자료 출력
+
+        let data = [];
+
+        $(".btn").click(function(){
+            let value = $(".inp").val();
+            console.log(value);
+            data.push(value);
+
+            let text = `<li>${value}</li>`;
+            $(".viewData").append(text)
+
+            viewData();
+        });
+
+        function viewData(){
+            let text = "";
+            for(let i=0; i<data.length;i++){
+                text += `<li>${data[i]}</li>`;
+            }
+
+            $(".viewData").html(text);
+        }
+    </script>
+</body>
+</html>
