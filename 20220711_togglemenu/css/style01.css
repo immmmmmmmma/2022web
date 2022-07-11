@@ -1,0 +1,58 @@
+@charset "utf-8";
+/********** css responsive init  **********/
+html,body{
+    height: 100%;
+}
+.wrap{}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.topMenu{
+
+}
+.topNav{
+    height: 100%;
+    background-color: #f0f;
+    display: flex;
+}
+.topNav a{
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+}
+.topNav a:hover{
+    background-color: #ff0;
+}
+.topNav a i{
+    margin-right: 7px;
+}
+.toggleMenu{
+    width: 50px;
+    display: none;
+}
+
+/********** css responsive  **********/
+@media (max-width: 1399px) {
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+    
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
