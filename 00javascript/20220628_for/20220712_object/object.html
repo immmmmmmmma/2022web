@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT</title>
+    <link rel="stylesheet" href="../../../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div>영어<span class="eng">0</span>점</div>
+    <div class="content"></div>
+
+    <script>
+        const obj = {
+            eng:100,
+            math:80,
+            kor:90,
+            levelup:function(){
+                return this.eng + 10
+            }
+        }
+        // obj.forEach(function(item,index){
+        //     console.log(item)
+        // })
+        //아래같이 배열 forEach문은 가능하지만
+        //obj forEach문은 불가능하다
+        // const arr= [10,30,40]
+
+        // arr.forEach(function(item,index){
+        //     console.log(item)
+        // })
+
+        //obj의 경우 for in문
+        //for in문
+        // for(let i in obj){
+        //     console.log(i + ":" + obj[i])
+        // }
+            document.querySelector(".eng").innerHTML = obj.levelup();
+
+            const viewdata = [
+                {index:1,title:'h1',content:'welcome1',name:'ni1',date:"20220713"},//viewdata[0]
+                {index:2,title:'h2',content:'welcome2',name:'ni2',date:"20220714"},//viewdata[1]
+                {index:3,title:'h3',content:'welcome3',name:'ni3',date:"20220715"},//viewdata[2]
+                {index:4,title:'h4',content:'welcome4',name:'ni4',date:"20220716"},//viewdata[3]
+                {index:5,title:'h5',content:'welcome5',name:'ni5',date:"20220717"},//viewdata[4]
+            ]
+
+            let txt = "";
+            for(let i=0;i<viewdata.length;i++){
+                console.log(viewdata[i].title)
+                txt += `<ul class="table">
+                            <li>${viewdat[i].idx}</li>
+                            <li>${viewdat[i].title}</li>
+                            <li>${viewdat[i].name}</li>
+                            <li>${viewdat[i].date}</li>
+                        </ul>`;
+
+                
+            
+            }
+
+            document.querySelector(".content").innerHTML = txt;
+
+
+
+        
+    </script>
+</body>
+</html>
