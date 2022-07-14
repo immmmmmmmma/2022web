@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object03_new</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        function Car(name){
+            this.name = name;
+        }
+
+        let mycar = new Car('sonata');
+        let yourcar = new Car('g80');
+
+       
+    </script>
+    <style>
+        .imgModi{display: none;}
+    </style>
+    <a href="#" onclick="add()" class="addImg">이미지추가</a>
+
+    <a href="#" onclick="modify()" class="imgModi">이미지변경</a>
+
+    <script>
+        
+        function add(){
+           const img = document.createElement("img") 
+           img.src = "../../images/testimg.jpg";
+           img.classList.add("imgView")
+
+           document.body.appendChild(img);
+
+           document.querySelector(".imgModi").style.display = "block"
+           document.querySelector(".addImg").style.display = "none"
+        }
+
+        function modify(){
+            let imgnum = Math.floor(Math.random() * 7 + 1 )
+            console.log(imgnum)
+            document.querySelector(".imgView").src = `../../images/img${imgnum}.jpg`
+        }
+    </script>
+</body>
+</html>
