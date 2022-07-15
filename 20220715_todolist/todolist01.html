@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" class="inp">
+    <button class="btn1">입력</button>
+
+    <ul class="listView">
+
+    </ul>
+    <button class="delAll">전체삭제</button>
+
+    <script>
+        let listData = ["test1","test2"];
+
+        const inp = document.querySelector(".inp")
+        const btn1 = document.querySelector(".btn1")
+        const listView = document.querySelector(".listView")
+        const delAll = document.querySelector(".delAll")
+
+        btn1.addEventListener("click",function(){
+            console.log(inp.value)
+
+            if(inp.value != ""){
+                listData.push(inp.value);
+                inp.value = "";
+                viewData();
+            }else{
+                alert("오늘의 할일을 입력해주세요")
+            }
+        })
+
+        function viewData(){
+            let html = "";
+
+            if(listData.length > 0)
+                for(let i=0;i<listData.length;i++){
+                    html += `<li>${listData} <span class="del" onclick="myDel(${i})">[삭제]</span></li>`
+                }else{
+                    html +="<li>오늘은 쉬는날</li>"
+                }
+                listView.innerHTML = html;
+        }
+
+        delAll.addEventListener("click",function(){
+            listData=[]; //data 삭제
+            viewData(); //viewlist 화면출력
+        })
+        function myDel(index){
+            console.log(index);
+            listData.splice(index,1);
+            viewData();
+        }
+
+        viewData()
+    </script>
+</body>
+</html>

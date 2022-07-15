@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <img src="../../images/testimg.jpg" alt="안녕하세요" 
+    onmouseover="over(this)"
+    onmouseout="out(this)"
+    class="testImg">
+    <span class="text">test</span>
+    
+    <script>
+        const testImg = document.querySelector(".testImg");
+        function change(){
+            //7이미지 random() 출력
+            let viewImg = Math.floor(Math.random() * 7 + 1)
+            //testImg.src = "../../images/img1.jpg"
+            testImg.src = `../../images/img${viewImg}.jpg`
+        }
+
+        function over(obj){
+            obj.src = "../../images/img1.jpg";
+        }
+        function out(obj){
+            obj.src="../../images/testimg.jpg";
+        }
+        
+        
+    </script>
+    <!-- <a href="javascript:void(0)">클릭미</a>
+    <a href="#" onclick="return false">클릭미</a>
+    <a href="#" onclick="mClick(event)">클릭미</a>
+    
+    <script>
+        function mClick(e){
+            e.preventDefalt();
+            //e=event
+        }
+    </script> -->
+
+    <script>
+        //for 글자의 크기(10~35px)를 5씩 증가
+
+        let text="";
+        for(let i=10;i<=35;i+=5){
+            text += `<span style="font-size:${i}px">test</span>`
+        }
+        document.querySelector(".text").innerHTML = text;
+    </script>
+</body>
+</html>
