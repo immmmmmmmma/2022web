@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .container{width: 1200px;margin: 0 auto;}
+        
+        .navbar{display: flex;}
+        .topMenu{
+            width: 100%;
+            display: flex;height: 100%;
+            _background-color:skyblue;
+        }
+        .topMenu a{
+            height:40px;display: flex;align-items: center;
+            padding: 0 20px;
+            background: pink;
+        }
+            
+        @media (max-width:1000px){
+            .navbar{}
+            .topMenuWrap{
+                position: fixed;
+                left: 0;top: 0;
+                width: 100%;height: 100%;
+                background-color:gray;
+                display: flex;justify-content: center;
+                align-items: center;
+            }
+            .topMenu{
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+             
+                height: 300px;
+                
+            }
+            .topMenu a{_align-self:flex-end}
+        }
+    </style>
+</head>
+<body>
+<div class="navbar container">
+    <h1>logo</h1>
+
+    <div class="topMenuWrap">
+        <div class="topMenu">
+            <a href="#">home</a>
+            <a href="#">sub01</a>
+            <a href="#">sub02</a>
+            <a href="#">sub03</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script_continue</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        // 3으로 나눈 나머지가 1인 수만 더하기(to 10)
+
+        let sum = 0; 
+        for(let i=1;i<=10;i++){
+            if( i%3 != 1){
+                continue;
+
+            }
+            document.write(ㅑ + "")
+            sum += i;
+        }
+        document.write("합은" + sum)
+
+        const n = prompt("구구단의 단수를 입력 1~9")
+        //prompt는 문자형태로 들어간다
+        function gugudan(n){
+            console.log(parseInt(n))
+            // console.log(typeof n)
+
+            let m = parseInt(n);
+            if(isNaN(m) || m < 1 || m > 9){
+                //논리곱
+                alert("잘못입력")
+                // return false;
+            }
+            for(let i=1;i<=9;i++){
+                document.write( n + " x " + n*i + "<br>")
+            }
+        }
+        gugudan(n)
+    </script>
+    <a href="#" onclick="return false">버튼</a>
+</body>
+</html>

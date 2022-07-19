@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery01</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+    </style>
+<body>
+    <button class="btn1">삭제</button>
+    <button class="btn2">생성</button>
+    
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+
+
+    <script>
+        // const btn1 = document.querySelector(".btn1");
+        // const box = document.querySeletorAll(".box");
+
+        // btn1.addEventListener("click",function(){
+        //     for(let i=0;i<box.length;i++)
+        //         box[i].style.display = "none";
+        // })
+        // btn2.addEventListener("click",function(){
+        //     for(let i=0;i<box.length;i++)
+        //         box[i].style.display = "block";
+        // })
+        //스크립트에서 하는법
+
+        //제이커리에서 하는법
+        $(".btn1").click(function(){
+            for(let i=0;i<$(".box").length;i++)
+                $(".box").eq(i).hide()//fadeout,slideUp같은 애니메이션 효과도 넣을 수 있음
+        })
+        $(".btn2").click(function(){
+            for(let i=0;i<$(".box").length;i++)
+                $(".box").eq(i).fadeIn(400*i)//이런식으로 값을 넣어서 조절도 가능
+        })
+    </script>
+</body>
+</html>

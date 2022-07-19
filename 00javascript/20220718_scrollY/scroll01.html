@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll01</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    html,body{
+        height: 100%;
+    }
+    .container{
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container h3{
+        font-size: 8vw;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+    .box{
+        position: fixed;
+        width: 150px;
+        height: 150px;
+        right: 10px;
+        bottom: 10px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header{
+        position: absolute;
+        width: 100%;
+        background-color:rgba();
+        display: flex;
+        padding: 16px 20px;
+        transition: 0.3;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    .header.fixed{
+        position: fixed;
+        padding:  5px 5px ;
+    }
+    .header .menu{
+        width: 400px;
+        background: pink;
+        margin-left: auto;
+    }
+    .header .menu1{
+        width: 300px;
+        background: #f00;
+    }
+    .header .toggle{
+        display: none;
+        background-color: skyblue;
+        width: 40px;
+        height: 40px;
+        margin-left: auto;  
+}
+    @media screen and (max-width:700px){
+        .header .menu,
+        .header .menu1{display: none;}
+        .header .toggle{display: block;}
+    }
+    
+</style>
+<body>
+    <nav class="header fixed">
+        <h1><a href="#">logo</a></h1>
+        <nav class="menu">menu area</nav>
+        <nav class="menu1">menu area1</nav>
+        <nav class="toggle">t</nav>
+    </nav>
+    <section class="container sec1" style="background-image: url(../../images/pc01.jpg);">
+        <h3>Lorem, ipsum dolor.</h3>
+    </section>
+    <section class="container sec2" style="background-image: url(../../images/pc02.jpg);">
+        <h3>Lorem, ipsum dolor.</h3>
+    </section>
+    <section class="container sec3" style="background-image: url(../../images/pc03.jpg);">
+        <h3>Lorem, ipsum dolor.</h3>
+    </section>
+    <section class="box">
+        scroll: <span class="scroll">0</span>
+    </section>
+
+    <script>
+        // #1 javascript
+        // const scroll = document.querySelector(".scroll");
+        // const header = document.querySelector(".header")
+        //document.querySeletor(".scroll").innerHTML = window.pageYOffset;
+        // window.addEventListener("scroll",function(){
+        //     let scrollY = window.pageYOffset;
+            //#1 setattribute
+            // if( scrollY > 300 ){
+            //     header.setAtrribute("style","position:fixed")
+            // }else{
+            //     header.setAtrribute("style","")
+            // }
+            
+            //#2 addclass
+            // if( scrollY > 300 ){
+            //     header.classList.add("fixed");
+            // }else{
+            //     header.classList.remove("fixed");
+
+            // }
+
+            // scroll.innerHTML = Math.floor(scrollY)
+            //document.querySeletor(".scroll").innerHTML = parseInt(window.pageYOffset);
+            //Math.floor(window.pageYOffset) 둘 다 정수 값으로 뽑아낸다
+            //윈도우가 스크롤 되면
+
+            $(window).scroll(function(){
+                let srcollY = window.pageYOffset;
+
+                if( scrollY > 300){
+                    // $(">header").attr("style","position:fixed")
+                    $(".header").addClass("fixed")
+                }else{
+                    // $(".header").attr("style","")
+                    $(".header").removeClass("fixed")
+                }
+                $(".scroll").html(parseInt(scrollY))
+            })
+        // })
+    </script>
+</body>
+</html>
