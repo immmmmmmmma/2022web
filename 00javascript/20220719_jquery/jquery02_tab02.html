@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery02_tab02</title>
+    <link rel="stylesheet" href="./../../css/reset.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        .tab{
+            display: flex;
+            width: 400px;
+            height: 50px;
+        }
+        .tab li{
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tab li.active{
+            background-color: burlywood;
+        }
+        .content{
+            width: 400px;
+            overflow: hidden;
+        }
+        .content ul{
+            width: 1200px; 
+            display: flex;
+            position: relative;
+            transition: 0.3s;
+        }
+        .content img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>  
+    <ul class="tab">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <div class="content">
+        <ul>
+            <li><img src="../../images/pc01.jpg" alt=""></li>
+            <li><img src="../../images/pc02.jpg" alt=""></li>
+            <li><img src="../../images/pc03.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <script>
+        $(".tab li").click(function(){
+            let i = $(this).index();
+
+            $(".tab li").removeClass("active");
+            $(this).addClass("active");
+
+            // $(".content ul").css("left",-i*400)
+            $(".content ul").stop().animate({left:-i*400},300)
+        })
+    </script>
+</body>
+</html>
