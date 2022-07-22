@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        html,body{height: 100%;}
+        /* html,body{height: 100%;}
         body{display: flex;justify-content: center;align-items: center;}
         .submenu{display: none;}
 
@@ -36,11 +36,57 @@
         .menu>li .submenu a{
             display: block;line-height: 30px;
             text-align: center;
+        } */
+        html,body{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menuWrap{
+            width: 400px;
+            position: relative;
+        }
+        .menu>li{
+            border: 1px solid #000;
+        }
+        .menu>li>a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+        .menu>li>a i{
+            transition: 0.3s;
+        }
+        .submenu{
+            display: none;
+            position: absolute;
+            width: 400px;
+            right: -400px;
+            top: 0;
+            border: 1px solid #000;
+        }
+        .menu>li.hover .submenu{
+            display: block;
+
+        }
+        .menu>li>a.active i{
+            transform: rotate(180deg);
+        }
+        .menu>li .submenu a{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    <div class="menuWrap">
+    <!-- <div class="menuWrap">
         <ul class="menu">
             <li><a href="#">menu01 <i class="fa-solid fa-circle-chevron-up"></i></a>
                 <ul class="submenu">
@@ -66,6 +112,32 @@
                 </ul>
             </li>
         </ul>
+    </div> -->
+
+    <div class="menuWrap">
+        <ul class="menu">
+            <li>
+                <a href="#">menu01<i class="fa-solid fa-circle-chevron-up"></i></a>
+                <ul class="submenu">
+                    <li><a href="#">sub01_01</a></li>
+                    <li><a href="#">sub01_02</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu02<i class="fa-solid fa-circle-chevron-up"></i></a>
+                <ul class="submenu">
+                    <li><a href="#">sub02_01</a></li>
+                    <li><a href="#">sub02_02</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu03<i class="fa-solid fa-circle-chevron-up"></i></a>
+                <ul class="submenu">
+                    <li><a href="#">sub03_01</a></li>
+                    <li><a href="#">sub03_02</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
     <script>
@@ -78,12 +150,12 @@
         $(".menu>li>a").click(function(e){
             e.preventDefault();
 
-            $(".menu>li>a").parent().find(".submenu").slideUp() //#3
+            $(".menu>li>a").parent().find(".submenu").hide() //#3
 
             if( $(this).hasClass("active") ){ //#4
                 $(".menu>li>a").removeClass("active");
             }else{
-                $(this).parent().find(".submenu").slideDown();
+                $(this).parent().find(".submenu").show();
                 $(".menu>li>a").removeClass("active");
                 $(this).addClass("active"); 
 
@@ -94,6 +166,17 @@
             // $(this).addClass("active"); //#1
 
             // $(this).parent().find(".submenu").show(); //#2
+        })
+
+
+        $(".menu>li>a").click(function(e){
+            e.preventDefault();
+
+            $(".menu>li>a").parent().find(".submenu").slideUp;
+
+            if( $(this).hasClass("active")){
+
+            }
         })
     </script>
 

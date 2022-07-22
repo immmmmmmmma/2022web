@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <style>
+    <!-- <style>
     .menu{
         display: flex;
     }
@@ -29,14 +29,37 @@
         width: 600px;
         border: 1px solid #000;
     }
-    /* .content div:first-child{
+    .content div:first-child{
         display: block;
-        } */
+        }
+    </style> -->
+    <style>
+        .menu{
+            display: flex;
+            width: 600px;
+        }
+        .menu li{
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        .content div{
+            display: none;
+            width: 600px;
+            border: 1px solid #000;
+        }
+        .content div:first-child{
+            display: block;
+        }
     </style>
 </head>
 
 <body>
-    <ul class="menu">
+    <!-- <ul class="menu">
         <li class="active">tab1</li>
         <li>tab2</li>
         <li>tab3</li>
@@ -45,9 +68,7 @@
         <div>1. Lorem, ipsum dolor sit amet consectetur adipisicing elit. In doloremque quae reprehenderit cupiditate unde exercitationem.</div>
         <div>2. Lorem, ipsum dolor sit amet consectetur adipisicing elit. In doloremque quae reprehenderit cupiditate unde exercitationem.</div>
         <div>3. Lorem, ipsum dolor sit amet consectetur adipisicing elit. In doloremque quae reprehenderit cupiditate unde exercitationem.</div>
-
     </div>
-
 
 <script>
     $(".menu>li").click(function(){
@@ -57,8 +78,29 @@
         let i = $(this).index();
         $(".content div").hide().eq(i).show();
     })
+</script> -->
 
+<ul class="menu">
+    <li class="active">tab01</li>
+    <li>tab02</li>
+    <li>tab03</li>
+</ul>
+<div class="content">
+    <div>1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consectetur nihil aliquam corporis voluptatibus, laudantium quam iusto aperiam sed et.</div>
+    <div>2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consectetur nihil aliquam corporis voluptatibus, laudantium quam iusto aperiam sed et.</div>
+    <div>3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consectetur nihil aliquam corporis voluptatibus, laudantium quam iusto aperiam sed et.</div>
+</div>
 
+<script>
+    $(".menu>li").click(function(){
+        $(".menu>li").removeClass("active");
+        $(this).addClass("active");
+
+        let i = $(this).index();
+        $(".content>div").hide();
+        $(".content>div").eq(i).show();
+
+    })
 </script>
 </body>
 </html>
