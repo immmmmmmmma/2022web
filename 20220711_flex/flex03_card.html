@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex03_card</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        .comtainer{
+            overflow: hidden;
+        }
+        .card-img{
+            /* height: 0; */
+            background-color: skyblue;
+            padding-bottom: 60%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .card-img img{
+            width: 0;
+        }
+        .card-txt{
+            background: darkcyan;
+        }
+        @media screen and (min-width:600px){
+            .cardWrap{
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -0.5em;
+
+                /* justify-content: space-between; */
+            }
+            li.card{
+                width: 50%;
+                padding: 0 0.5em;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+            
+            .card-txt{
+                flex-grow: 1;
+            }
+        }
+        @media screen and (min-width:850px){
+            li.card{
+                width: calc( 100% / 3 );
+            }
+        }
+        @media screen and (min-width:1200px){
+            .container{
+                margin: 0 auto;
+                width: 1200px;
+            }
+            li.card{
+                width: calc( 100% / 4 );
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="cardWrap">
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images01.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images02.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images03.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images04.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images01.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images02.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images03.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images04.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images01.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images02.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images03.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-img" style="background-image:url(../images/images04.jpg);">
+                    <img src="../images/testimg.jpg" alt="">
+                </figure>
+                <div class="card-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, dignissimos.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

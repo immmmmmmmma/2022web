@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object01</title>
+    
+</head>
+<body>
+    <script>
+        const array =[0,1,100];
+        const obj = {
+            eng:90,math:100,kor:80,
+            study:function(num){
+            //    return obj.eng += 10;
+               return this.eng += num;
+            }
+        }
+    </script>
+
+    <div class="box" onclick="link('www.naver.com')">
+        네이버
+    </div>
+    <div class="box" onclick="link('www.daum.net')">
+        daum
+    </div>
+    <div>
+        <a href="#" onclick="window.history.back()">test</a>
+    </div>
+
+    <script>
+        function link(plink){
+            window.location.href=`http://${plink}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+@charset "utf-8";
+#gallery{
+    width: 824px;
+    margin: 0 auto;
+}
+#images{
+    width: 760px;
+    margin: 0 auto; 
+    margin-bottom: 10px;
+}
+#images > p{
+    display: none;
+}
+#thumbnail{
+    display: flex;
+}
+#thumbnail .left,
+#thumbnail .right{
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#thumbnail .container{
+    width: 760px;
+    overflow: hidden;
+}
+.itemWrap{
+    width: 2280px;
+    position: relative;
+    left: 0;
+    transition: 0.3;
+}
+.itemWrap li{
+    float: left;
+    margin-right: 8px;
+    cursor: pointer;
+}
