@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" class="inp">
+    <button class="btn1">오늘 할 일</button>
+    <ul class="viewList">
+
+    </ul>
+    <button class="btn2">전체삭제</button>
+
+
+    <script>
+        let listData= [];
+
+        //init
+        const inp = document.querySelector(".inp");
+        const btn1 = document.querySelector(".btn1");
+        const viewList = document.querySelector(".viewList");
+        const btn2 = document.querySelector(".btn2");
+
+        btn1.addEventListener("click",function(){
+            let value = inp.value;
+
+            
+        })
+    </script>
+</body>
+</html>
