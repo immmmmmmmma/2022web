@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object05_new</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        //object literal객체데이터
+        const obj = {
+            name:"박시현",
+            age:30,//숫자데이터는 ""를 쓰지않는다
+            run:function(){
+                console.log(this.name + "이 달린다")
+            }
+
+        }
+        obj.color = "blue";
+        obj.view = function(){
+            console.log(this.color)
+        }
+
+        function Man(){
+
+        }
+        let parkView = new Man();
+        let parkView1 = new Man();
+
+        parkView.name = "박시현"
+        parkView1.name = "현시박"
+
+        function Car(_name,_color,_type){
+            this.name = _name;
+            this.color = _color;
+            this.type = _type;
+            // constructor
+        }
+        Car.prototype.drive = function(){
+            console.log(this.name + "가 달린다")
+        }
+
+        let park = new Car("maybach","peridotegreen","middle")
+
+        class Car2 {
+            constructor(_name,_color,_type){
+                this.name = _name;
+                this.color = _color;
+                this.type = _type;
+            }
+            drive(){
+                console.log(this.name + "가 달린다.")
+            }
+        }
+        let myCar = new Car2("bmw3","페리도트그린","중형")
+
+        $("선택자").on("click",function(){
+            
+        })
+
+    </script>
+
+</body>
+</html>

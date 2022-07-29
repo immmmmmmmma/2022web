@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide01_basic_fade</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .container{
+            width: 1000px;
+            height: 400px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .container .slide{
+            position: relative;
+        }
+        .container .slide div{
+            position: absolute;
+            opacity: 0;
+        }
+        .container .slide div:nth-child(1){
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slide">
+            <div><img src="../../images/images01.jpg" alt=""></div>
+            <div><img src="../../images/images02.jpg" alt=""></div>
+            <div><img src="../../images/images03.jpg" alt=""></div>
+            <div><img src="../../images/images04.jpg" alt=""></div>
+        </div>
+    </div>
+    <script>
+        setInterval(slideNum,3000);
+
+        let num = 0;
+        let view = 0;
+        function slideNum() {
+            num++;
+
+            if(num == $(".slide > div").length){
+                num = 0;
+            }
+
+            $(".slide>div")
+            .eq(num)
+            .css({"z-index":view++,opacity:0})
+            .stop()
+            .animate({opacity:1},500)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event01</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<a onmouseover="this.style.background='orcid';this.style.color='white'",
+onmouseout="this.style.backgroundColor='initial';this.style.color='initial'">
+안녕
+</a>
+
+<p class="box">만나서 반가워</p>
+<p class="box1">만나서 반갑습니다</p>
+
+<script>
+    const p = document.querySelector(".box");
+
+    p.onmouseover=over;//function(){}
+    // document.querySelector(".box").onmouseover = over;
+    document.querySelector(".box").onmouseout = out;
+    // document.querySelector(".box").addEventListener("mouseover",over)
+    function over(){
+        console.log("mouseover")
+    }
+    function over(){
+        console.log("mouseout")
+    }
+    const p1 = document.querySelector(".box1");
+
+    p1.addEventListener("mouseover",function(){
+        console.log("mouseover");
+    });
+    p1.addEventListener("mouseout",out)
+</script>
+</body>
+</html>

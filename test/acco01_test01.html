@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acco01_test01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .menuWrap{
+            width: 400px;
+            border: 1px solid #333;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+        .menu>li{
+            /* text-align: center; */
+            width: 400px;
+            border-bottom: 1px solid #333;
+        }
+        .menu>li>a{
+            width: 400px;
+            height: 40px;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+        }
+        .submenu{
+            display: none;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="menuWrap">
+        <ul class="menu">
+            <li>
+                <a href="#">menu1</a>
+                <ul class="submenu">
+                    <li>sub01_01</li>
+                    <li>sub01_02</li>
+                    <li>sub01_03</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu2</a>
+                <ul class="submenu">
+                    <li>sub02_01</li>
+                    <li>sub02_02</li>
+                    <li>sub02_03</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu3</a>
+                <ul class="submenu">
+                    <li>sub03_01</li>
+                    <li>sub03_02</li>
+                    <li>sub03_03</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $(".menu>li>a").click(function(e){
+            e.preventDefault();
+
+                $(".menu>li>a").parent().find(".submenu").hide()
+
+            if($(this).hasClass("active")){
+                $(".menu>li>a").removeClass("active")
+            }else{
+                $(".menu>li>a").removeClass("active")
+                $(this).addClass("active")
+                
+                $(this).parent().find(".submenu").show()
+            }})
+
+        // $(".menu>li>a").click(function(e){
+        //     e.preventDefault();
+
+            
+        //     $(".menu>li>a").parent().find(".submenu").hide() //#3
+        //     //태그나 클래스 등 자식 요소를 지정 찾을 때
+
+        //     if( $(this).hasClass("active")){ //#4
+        //         $(".menu>li>a").removeClass("active");
+
+        //     }else{
+        //         $(this).parent().find(".submenu").show(); //#2
+
+        //         $(".menu>li>a").removeClass("active"); //#1
+        //         $(this).addClass("active"); //#1
+        //     }
+        // })
+    </script>
+</body>
+</html>
