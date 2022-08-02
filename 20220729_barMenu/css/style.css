@@ -1,67 +1,101 @@
 @charset "utf-8";
 /********** css responsive init  **********/
-.container{
-    width: 1200px;
-    margin: 0 auto;
-}
-h1{
-    text-align: center;
-    margin-bottom: 10px;
-}
-.navbar ul{
-    display: flex;
-    height: 40px;
-}
+.container{width: 1200px; margin: 0 auto}
+h1{text-align: center;margin-bottom: 10px;}
+
+.navbar{position: relative;}
+.navbar ul{display: flex;height: 50px;}
 .navbar ul li{
-    flex: 1 1 auto;
+    flex:1 1 auto;
     /* background: skyblue; */
-    position: relative;
+    position: relative; 
 }
 .navbar ul li a{
-    display: flex;
-    justify-content: center;
+    display: flex;justify-content: center;
     align-items: center;
     height: 100%;
 }
+
 .navbar ul li:after{
-    content: "";
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
+    content:"";display: block;
+    width: 8px;height: 8px;
+    border-radius:4px;
     background: red;
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: 0.3s;
+    top: 0;left: 50%;transform: translateX(-50%);
+    opacity:0;transition: 0.3s;
 }
 .navbar ul li:hover:after{
     opacity: 1;
 }
+
+.navbar ul li.active:after{
+    opacity: 1;
+}
+
+
+
 .bar{
     position: absolute;
     width: calc( 100% / 5 );
-    height: 0px;
+    height: 3px;background: red;
     bottom: 0;
-    background: #f00;
-    transition: 0.3s;
+    left:0;transition: 0.3s;
     opacity: 0;
 }
 
 .visual{
-    height: 200px;
-    background: burlywood;
-    display: flex;
-    justify-content: center;
+    height: 200px;background: #ddd;
+    display: flex;justify-content: center;
     align-items: center;
+}
+
+/* subpage  */
+.subVisual{
+    height: 200px;
+    display: flex;justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.subVisual h2{color:white;text-shadow: 0 0 10px rgba(0, 0, 0, 1);}
+
+
+.subVisual.company{background-image: url(../../images/pc01.jpg);}
+.subVisual.product{background-image: url(../../images/pc02.jpg);}
+
+
+
+
+
+
+
+
+
+
+
+
+/********** css responsive  **********/
+@media (max-width: 1399px) {
 
 }
 
+@media (max-width: 1199px) {
 
+}
 
-/* header  */
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
 
 
 

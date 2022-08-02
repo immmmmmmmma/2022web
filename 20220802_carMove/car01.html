@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car01</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        html,body{height: 100%;}
+        body{
+            display: flex;justify-content: center;align-items: center;
+            flex-direction: column;
+        }
+        .panel{
+            width: 600px;height: 300px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .btnWrap{
+            _background-color: blue;
+            width: 600px;display: flex;
+            padding: 10px 0;
+        }
+        .btn1{margin-left: auto;margin-right: 5px;}
+
+        .bar{
+            width: 500px;height: 10px;background: red;
+            position: absolute;left:50px;top: 190px;
+        }
+        .car{
+            position: absolute; left:50px;top: 120px;
+        }
+        .car.rotate{transform: rotateY(180deg);}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="panel">
+        <div class="bar"></div>
+        <div class="car">
+            <img src="../../images/car.png" alt="">
+        </div>
+    </div>
+    <div class="btnWrap">
+        <button class="btn1">start</button>
+        <button class="btn2">stop</button>
+    </div>
+    <script>
+
+        // let current = 50; //star location
+        // let move = 10; // 2px move
+
+        // setInterval(function(){
+        //     current += move;
+        //     $(".car").css("left",current)
+        // },300)
+
+        // init 
+        const nStart = $(".car").position().left; // 50
+        const nEnd = nStart + $(".bar").width() - $(".car").width() // 50 + ( 500 - 120 ) 
+        let nStep = 2;
+        let current = nStart;
+        let timeId;
+
+
+        
+        // event
+        timeId = setInterval(carMove,30);
+
+        
+        // function
+        function carMove(){
+            current += nStep;
+
+            if( current > nEnd ){
+               nStep = -nStep;
+               $(".car").addClass("rotate");
+            }
+            if( current < nStart){
+                nStep = -nStep;
+                $(".car").removeClass("rotate");
+            }
+
+            $(".car").css("left",current);
+
+        }
+
+
+    </script>
+</body>
+</html>
