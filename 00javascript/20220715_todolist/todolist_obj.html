@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist_obj</title>
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <ul class="listView">
+
+    </ul>
+    <script>
+        let listData = [
+            '오늘의 할일1',
+            '오늘의 할일2',
+            '오늘의 할일3',
+            '오늘의 할일4',
+        ];
+
+        // const listView = document.querySelector(".listView");
+
+        // function view(){ #
+        //     let viewList = " "; //누적데이터를 담을 공간 변수 선언, 초기값 #
+        //     for(let i=0;i<listData.length;i++){ #
+        //         viewList = `<li> ${listData[i]} </li>`//ul>에 들어갈 <li> 구성 #
+                
+        //     }
+        //     listView.innerHTML = viewList;//화면 출력 #
+
+        // }
+        // view() #
+
+        const listView = document.querySelector(".listView");
+
+        function view(){
+            let viewList = " ";
+            for(let i=0;i<listData.length;i++){
+                viewList = `<li> ${listData[i]} </li>`
+                
+            }
+            listView.innerHTML = viewList;
+        }
+        view()
+    </script>
+</body>
+</html>

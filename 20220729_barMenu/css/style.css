@@ -50,6 +50,15 @@ h1{text-align: center;margin-bottom: 10px;}
     align-items: center;
 }
 
+.contents{display: flex;}
+.contents li{flex:1 1 25%}
+.contents li:nth-child(2n){background: skyblue;}
+.contents li a{
+    display: flex;
+    padding: 30px;justify-content: center;
+}
+
+
 /* subpage  */
 .subVisual{
     height: 200px;
@@ -65,6 +74,27 @@ h1{text-align: center;margin-bottom: 10px;}
 .subVisual.company{background-image: url(../../images/pc01.jpg);}
 .subVisual.product{background-image: url(../../images/pc02.jpg);}
 
+.sub{margin-top: -40px;}
+.sub .tab{display: flex;}
+.sub .tab li{
+    flex:1 1 25%;height: 40px;
+    display: flex;justify-content: center;align-items: center;
+    background: lightgray;
+    cursor: pointer;
+}
+.sub .tab li.active{
+    background: skyblue;
+}
+.sub .content>div{
+    display: none;
+    border: 1px solid #000;
+    padding: 30px;
+    border-top: 0 none;
+}
+.sub .content div:nth-child(1){display: block;}
+.sub .content h2{text-align: center;margin-bottom: 30px;}
+.sub .locat{text-align: right;margin-bottom: 10px;}
+
 
 
 
@@ -91,32 +121,6 @@ h1{text-align: center;margin-bottom: 10px;}
 
 @media (max-width: 767px) {
 
-}
-
-@media (max-width: 575px) {
-
-}
-
-
-
-
-
-
-
-
-/********** css responsive  **********/
-@media (max-width: 1399px) {
-
-}
-
-@media (max-width: 1199px) {
-}
- 
-@media (max-width: 991px) {
-
-}
-
-@media (max-width: 767px) {
 }
 
 @media (max-width: 575px) {

@@ -27,9 +27,64 @@
     <div class="subVisual company" >
         <h2>COMPANY</h2>
     </div>
+
+    <div class="container sub">
+        <ul class="tab">
+            <li class="active">tab1</li>
+            <li>tab2</li>
+            <li>tab3</li>
+            <li>tab4</li>
+        </ul>
+        <div class="content">
+            <div>
+                <div class="locat">HOME > COMPANY > TAB1</div>
+                <h2>tab1</h2>
+                1 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium unde provident deserunt culpa expedita eum alias perferendis? Officiis, ut repellat!</div>
+            <div>
+                <div class="locat">HOME > COMPANY > TAB2</div>
+                <h2>tab2</h2>
+                2 Voluptatibus iure dolorem ex consectetur nesciunt soluta voluptate, asperiores iste magni assumenda ducimus adipisci quo? Veniam illum hic dolor voluptatibus!</div>
+            <div>
+                <div class="locat">HOME > COMPANY > TAB3</div>
+                <h2>tab3</h2>
+                3 Quo, cupiditate. Laboriosam modi amet quam. Ipsum sequi quia quaerat qui, quibusdam consectetur a assumenda quo perspiciatis nihil! Magni, incidunt!</div>
+            <div>
+                <div class="locat">HOME > COMPANY > TAB4</div>
+                <h2>tab4</h2>
+                4 Ipsam enim expedita asperiores cupiditate nemo ea, labore porro consectetur non illo accusamus beatae, sunt iusto. Unde expedita ducimus molestiae?</div>
+        </div>
+    </div>
 <script src="js/script.js"></script>
 <script>
-    nowMenu(0);
+    nowMenu(0); //depth1
+
+    //depth2
+    let params = new URLSearchParams(location.search);
+    console.log(params.get("submenu"))
+
+
+    function tab(){
+        $(".tab li").click(function(){
+            let i = $(this).index();
+            $(".tab li").removeClass("active");
+            $(this).addClass("active")
+
+            $(".content>div").hide().eq(i).show()
+        })
+    }
+
+
+    function views(i){
+        if( i != null){
+            $(".tab li").removeClass("active").eq(i).addClass("active");
+            $(".content>div").hide().eq(i).show();
+            tab();
+        }else{
+            tab();
+        }
+    }
+
+    views( params.get("submenu") )
 </script>
 </body>
 </html>

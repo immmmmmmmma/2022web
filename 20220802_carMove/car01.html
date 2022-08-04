@@ -63,11 +63,25 @@
         let nStep = 2;
         let current = nStart;
         let timeId;
+        let move = true;
 
 
         
         // event
-        timeId = setInterval(carMove,30);
+        //timeId = setInterval(carMove,30);
+        
+        $(".btn1").click(function(){
+            if(move == true){
+                timeId = setInterval(carMove,30)
+                console.log(timeId)
+                move = !move; // false
+            }
+        })
+        $(".btn2").click(function(){
+            clearInterval(timeId);
+            //timeId = 0;
+            move = !move;
+        })
 
         
         // function
