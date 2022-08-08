@@ -8,51 +8,25 @@
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <style>
-        .navbar{
 
-        }
-        .menu{
-            width: 1000px;
-            margin: 0 auto;
-        }
-        .submenu{
-            display: none;
-        }
-        .menu{
-            display: flex;
-        }
-        .menu>li{
-            flex: 1 1 25%;
-        }
-        .menu li:hover{
-            background: lightsalmon;
-        }
+        .navbar{background: skyblue;}
+        .menu{width: 1000px;margin: 0 auto;}
+        .submenu{display: none;}
+        .menu{display: flex;height: 40px;}
+        .menu>li{flex:1 1 25%;}
+        .menu>li:hover{background: lightgray;}
         .menu>li>a{
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
+            display: flex;height: 100%;display: flex;
+            justify-content: center;align-items: center;
         }
-        .menu>li:hover .submenu{
-            display: block;
-        }
-        .submenu li{
-            height: 40px;
-        }
-        .sumenu li:hover{
-            background: lightcoral;
-        }
-        .submenu li a{
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-        }
-        .visual{
-            height: 200px;background-color: pink;
-        }
+
+        .menu>li:hover .submenu{display: block;}
+        .submenu li{height: 40px;background: lightgray;}
+        .submenu li:hover{background: gray;}
+        .submenu li a{display: flex;height: 100%;justify-content: center;align-items: center;}
+
+        .visual{height: 200px;background: pink;}
     </style>
 </head>
 <body>
@@ -61,8 +35,41 @@
         
         </ul>
     </div>
-    <div class="visual"></div>
+    <div class="visual">
 
-    <script src="./menu.js"></script>
+    </div>
+
+    <script src="menu.js"></script>
+    <script>
+        
+
+        let menuLi = document.querySelector(".menu");
+
+        let listView = '';
+        menuData.forEach(function(item,index){
+            //console.log(item.menu)
+            //console.log(menuData[index].menu)
+            //console.log(menuData[index]["menu"])
+
+            listView += `<li>`
+            listView += `    <a href="${item.href}">${item.menu}</a>`
+
+            if(item.sub !=null){
+                listView += `<ul class="submenu">`
+                    item.sub.forEach(function(iSub){
+                        listView += `<li>`
+                        listView += `    <a href="${iSub.href}">${iSub.smenu}</a>`
+                        listView += `</li>`
+                    })
+                listView += `</ul>`
+            }
+
+            listView += `</li>`
+
+        })
+        menuLi.innerHTML = listView;
+
+    </script>
+    
 </body>
 </html>

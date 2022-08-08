@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bootstrap01</title>
-    <link rel="stylesheet" href="css/reset.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
+
 <body>
+    <!-- fluid는 이미지가 더 클 때 사용 -->
+    <!-- sm은 w576 md는 w768 lg는 w992 이상 일때 적용 -->
+    <!-- d는 display p는 padding-->
+    
+    <!-- <div class="container bg-primary text-white">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 bg-primary p-3">1</div>
+                <div class="card">
+                    <img src="../images/testimg.jpg" alt="" class="img-fluid w-100 card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title md-4">
+                            Lorem ipsum dolor sit amet.
+                        </h3>
+                        <div class="btn btn-primary d-block d-md-inline">click</div>
+                    </div>
+                </div>
+        </div>
+    </div> -->
+
     <div class="container bg-primary text-white">
-        <div class="row"> <!--row 값이 필요함 -->
-            <div class="col-12 col-sm-4 col-md-4 col-lg-3 bg-succes p-3">1</div>
-            <div class="col-6 col-sm-4 col-md-4 col-lg-3 bg-danger">2</div>
-            <div class="col-6 col-sm-4 col-md-4 col-lg-3 bg-infor">3</div>
-            <div class="col-6 col-sm-12 col-md-4 col-lg-3 bg-dark">4</div>
+        
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 p-3">
+                <div class="card">
+                    <img class="card-img-top" src="../images/testimg.jpg" alt="Title">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                        <div class="btn btn-primary d-block">click</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 p-3">
+                <div class="card">
+                    <img class="card-img-top" src="../images/testimg.jpg" alt="Title">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                        <div class="btn btn-primary d-block">click</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 p-3">
+                <div class="card">
+                    <img class="card-img-top" src="../images/testimg.jpg" alt="Title">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                        <div class="btn btn-primary d-block">click</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 p-3">
+                <div class="card">
+                    <img class="card-img-top" src="../images/testimg.jpg" alt="Title">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                        <div class="btn btn-primary d-block">click</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-<script src="js/script.js"></script>
 </body>
+
 </html>
