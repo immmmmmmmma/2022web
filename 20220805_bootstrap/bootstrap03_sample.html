@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        @media (min-width:760px){
+            .dropdown:hover .dropdown-menu{
+                display: block;
+            }
+        }
+        .visual{
+            background:url(images/bg-top.jpg) no-repeat center;
+            background-size: cover;
+            
+        }
+        .bg-gray{
+            background: #f0f1f4 !important;
+        }
+        .con-1st .card{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 0 none;
+            transition: 0.3s;
+        }
+        .con-1st .card:hover{
+            transform: translate(-10px,10px);
+            box-shadow:10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+        .viewLine:after{
+            content: "";
+            display: block;
+            width: 200px;
+            height: 1px;
+            background: #000;
+            margin: 20px auto;
+        }
+        .cont-2nd{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .cont-2nd .card{
+            border: 0 none;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- bs5-navbar-d -->
+    <!-- navbar-expand-sm sm사이즈일때 토글메뉴를 만듦 -->
+    <!-- navbar-light bg-light는 bg가 하얀색일때 글자가 검은색으로 보인다-->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <!-- me은 margin-end값 ms는 margin-start-->
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <!-- submenu구간 -->
+                    <!-- data-bs-toggle="dropdown" 데이터의 속성 /id="dropdownId" 와 aria-labelledby="dropdownId" 아이디가 같아야한다-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown">안녕하세요</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">적당히</a>
+                            <a class="dropdown-item" href="#">바람이</a>
+                            <a class="dropdown-item" href="#">시원해</a>
+                            <a class="dropdown-item" href="#">기분이</a>
+                            <a class="dropdown-item" href="#">좋아요</a>
+                            <a class="dropdown-item" href="#">uhu~</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex my-2 my-lg-0">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+      </div>
+    </nav>
+
+    <div class="visual py-5">
+        <div class="container text-center text-white">
+            <h2>Lorem ipsum dolor sit amet.  </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, obcaecati?</p>
+            <a href="#" class="btn btn-dark d-block d-md-inline-block mb-3 mx-5">UPLOAD PROJECT</a>
+            <img src="images/drop-icon.png" alt="" class="d-none d-md-block m-auto mb-3">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+    
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-7  mb-5 mb-md-0 px-5 px-md-0">
+                <img src="images/symu-panel-2.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-5 text-center text-md-start">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, hic?</p>
+                <a href="#!" class="btn btn-primary"></a>
+                <!-- #!는 a테그가 위로 올라오는걸 막아준다 -->
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gray cont-1st py-5">
+        <div class="container">
+            <h2 class="text-center mb-3 viewLine">gallery</h2>
+            <p class="text-center mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <!-- bs5-card-d -->
+                    <div class="card">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cont-2nd" style="background-image: url(images/testimg.jpg);">
+            <div class="container py-5">
+                <h2 class="text-center mb-3 viewLine text-white">gallery</h2>
+                <p class="text-center mb-5 text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <div class="row">
+                    <div class="col-6 col-md-3">
+                        <!-- bs5-card-d -->
+                        <div class="card">
+                            <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Lorem, ipsum.</h4>
+                                <p class="card-text">Lorem, ipsum dolor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer py-5 bg-dark text-white">
+        <div class="container text-center">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, amet?
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>

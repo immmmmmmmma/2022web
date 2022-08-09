@@ -10,13 +10,41 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-<div class="navbar">
-    <div class="menu">
+<ul class="viewData">
 
-    </div>
-</div>
+</ul>
 
-<script src="./test.js"></script>
 
+
+
+<script>
+    let listData="";
+
+    const viewData = document.querySelector(".viewData")
+
+    view();
+    
+    function view(){
+        todoData = "";
+        listData.forEach(function(item,i){
+            todoList += `<li>`
+                if(item.done == true){
+                    todoList += `<div class="txt active" onclick="done(${i}">${listData[i]["todo"]}</div>`
+                }else{
+                    todoList += `<div class="txt" onclick="done(${i}">${listData[i]["todo"]}</div>`
+                }
+                todoList += `<div class="iconWarp">`
+                    todoList += `<a href="" onclick="">De</a>`
+                    todoList += `<a href="" onclick="">Mo</a>`
+                    if(item.done == ture){
+                        todoList += `<a href="" onclick="done(${i})">Cl</a>`
+                    }else{
+                        todoList += `<a href="" onclick="done(${i})">Do</a>`
+                    }
+                todoList += `</div>`
+            todoList += `</li>`
+        })
+    }
+</script>
 </body>
 </html>
