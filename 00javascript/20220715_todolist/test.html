@@ -14,37 +14,57 @@
 
 </ul>
 
+<!-- <li>
+    <div class="txt"></div>
+    <div class="iconWarp">
+        <a href="#" onclick="">DE</a>
+        <a href="#" onclick="">MO</a>
+        <a href="#" onclick="">DO</a>
+        <a href="#" onclick="">CA</a>
+    </div>
+</li> -->
 
 
 
 <script>
-    let listData="";
+let listData = "";
 
-    const viewData = document.querySelector(".viewData")
+const viewData = document.querySelector(".viewData")
+const inp = document.querySelector(".inp")
+const btn = document.querySelector(".btn")
 
-    view();
+
+view();
+
+function view(){
+    todoData ="";
+    listData.forEach(function(item,i){
+
+    todoData += `<li>`
+
+        if(item.done == true){
+            todoData += `<div class="txt active" onclick="done${i}">${listData[i]["todo"]}</div>`
+        }else{
+            todoData += `<div class="txt" onclick="done${i}">${listData[i]["todo"]}</div>`
+        }
+        todoData += `<div class="iconWarp">`
+            todoData += `<a href="#" onclick="done${i}">DE</a>`
+            todoData += `<a href="#" onclick="">MO</a>`
+            if(item.done == true){
+                todoData += `<a href="#" onclick="done${i}">CA</a>`
+            }else{
+                todoData += `<a href="#" onclick="done${i}">DO</a>`
+            }
+        todoData += `</div>`
+    todoData += `</li>`
+    })
+    viewData.innerHTML = todoData
+
     
-    function view(){
-        todoData = "";
-        listData.forEach(function(item,i){
-            todoList += `<li>`
-                if(item.done == true){
-                    todoList += `<div class="txt active" onclick="done(${i}">${listData[i]["todo"]}</div>`
-                }else{
-                    todoList += `<div class="txt" onclick="done(${i}">${listData[i]["todo"]}</div>`
-                }
-                todoList += `<div class="iconWarp">`
-                    todoList += `<a href="" onclick="">De</a>`
-                    todoList += `<a href="" onclick="">Mo</a>`
-                    if(item.done == ture){
-                        todoList += `<a href="" onclick="done(${i})">Cl</a>`
-                    }else{
-                        todoList += `<a href="" onclick="done(${i})">Do</a>`
-                    }
-                todoList += `</div>`
-            todoList += `</li>`
-        })
-    }
+
+
+
+}
 </script>
 </body>
 </html>
