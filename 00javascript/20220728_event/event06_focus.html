@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event06_focus</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        input:focus{
+            outline: solid 1px red;
+        }
+    </style>
+
+</head>
+<body>
+    <form>
+        <label for="name">이름</label>
+        <!-- <input type="text" id="name" onblur="checkFilled(this)"><br> -->
+        <input type="text" id="name"><br>
+        <label for="name">학번</label>
+        <input type="text" id="hack">
+
+        지역 : <span class="location">선택</span><br>
+        <input type="radio" name="zone" value="서울" id="z1st"> <label for="zi1st">서울</label>
+        <input type="radio" name="zone" value="부산"> 부산
+        <input type="radio" name="zone" value="대구"> 대구
+        <!-- <button class="selZone">선택</button> -->
+        <input type="button" value="선택" class="selZone">
+    </form>
+
+    <script>
+        // window.body.onload = function(){
+        //     document.getElementById("name").focus()
+        // }
+
+        // function checkFilled(obj){
+        //     // obj.value = checkFilled(this)
+        //     if(obj.value == ""){
+        //         alert("입력해!!!!");
+
+        //         obj.focus();
+        //     }
+        // }
+
+        let loc = document.querySelector(".location");
+        let kcity = document.getElementsByClassName(".zone");
+        let selZone = document.querySelector(".selZone");
+
+        // selZone.onclick = function(){
+            
+        //     for(let i=0;i<kcity.length;i++){
+        //         if(lcity[i].checked == true){
+        //             loc.innerHTML = kcity[i].value
+        //         }
+        //     }
+        // }
+
+        selZone.addEventListener("click",selView);
+        function selView(){
+            for(let i=0;i<kcity.length;i++){
+                if(lcity[i].checked == true){
+                    loc.innerHTML = kcity[i].value
+                }
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

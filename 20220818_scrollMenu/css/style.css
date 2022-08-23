@@ -1,0 +1,74 @@
+@charset "utf-8";
+/********** css responsive init  **********/
+html,body{
+    height: 100%;
+}
+.menu{
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    padding: 10px 16px;
+    gap: 20px;
+}
+.menuWrap{
+    display: flex;
+    gap: 10px;
+}
+.menuWrap a{
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    border-radius: 10px;
+}
+.menuWrap a.hover{
+    background: pink;
+}
+
+.menuWrap a.active{
+    background: skyblue;
+}
+
+.scene{
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scene .viewTxt{
+    width: 700px;
+    padding: 0 20px;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.scene .viewTxt h2{
+    font-size: 5vh;
+    margin-bottom: 50px;
+}
+
+/********** css responsive  **********/
+@media (max-width: 1399px) {
+
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+    .menuWrap{
+        margin-left:auto;
+    }
+    .scene .viewTxt{
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event04_onload</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<img src="../../images/testimg.jpg" alt="" class="img">
+<button class="btn">변경</button>
+
+
+<form >
+    <select id="sel" onchange="changeImg()">
+        <option value="../../images/testimg.jpg">선택</option>
+        <option value="../../images/banana.png">바나나</option>
+        <option value="../../images/apple.png">사과</option>
+    </select>
+    <img src="../../images/testimg.jpg" alt="" class="img1">
+
+
+    
+</form>
+
+<script>
+    let img = document.querySelector(".img");
+    let btn = document.querySelector(".btn");
+    console.log(img.width); //0
+
+    // btn.onclick = myClick;
+    // btn.addEventListener("click",myClick)
+    // function myClick(){}
+
+    btn.onclick = function(){
+        img.src = "../../images/apple.png"
+        console.log(img.width) // 300
+
+        img.onload =function(){
+            console.log(img.width) //99
+        }
+
+    }
+
+    // window.onload =function(){
+    //     console.log(img.width) 
+    // }
+
+    function changeImg(){
+        let sel = document.querySelector("#sel");
+        let img1 = document.querySelector(".img1");
+        let index = sel.selectedIndex;
+        console.log("선택 : "+index)
+        console.log("value : "+sel.options[index].value)
+
+        img1.src = sel.options[index].value;
+    }
+</script>
+
+site<br>
+    <select id="selUrl" onchange="goUrl()">
+        <option value="">선택하시오</option>
+        <option value="www.naver.com">네이버</option>
+        <option value="www.daum.net">다음</option>
+    </select>
+
+    <script>
+        function goUrl(){
+            let selUrl = document.querySelector("#selUrl");
+            let i = selUrl.selectedIndex;
+            console.log(i)
+
+            location.href = "http://" + selUrl.options[i].value
+
+        }
+    </script>
+</body>
+</html>

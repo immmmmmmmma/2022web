@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window02_timeout</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+
+    <script>
+        // #1
+        // setTimeout(park,3000)
+
+
+        // #2
+        // setTimeout("park()",3000)
+        // function park(){
+            // 문자형태로 표현
+        // }
+
+        // #3
+        // setTimeout(function(){
+            //함수로 표현
+        // },3000);
+
+        setTimeout(function(){
+        },3000);
+
+        // setTimeout(()=>{
+        // },3000); 에로우 함수
+
+    </script>
+</body>
+</html>
