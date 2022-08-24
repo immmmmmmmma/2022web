@@ -1,62 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>slide02_bagic</title>
+    <title>slide02_basic</title>
     <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <style>
         .wrapper{
-            width: 500px;
-            height: 200px;
-            margin: 0 auto;
-            background: pink;
-            overflow: hidden;
+            width: 1000px;height: 400px;margin: 0 auto;
+            background: red;overflow: hidden;
         }
-        .wrapper img{
-            width: 100%;
-        }
-        .wrapper ul{
-            position: relative;
-        }
-        .wrapper li{
-            position: absolute;
-            left: 100%;
-            width: 100%;
-            transition: 0.3s;
-        }
-        .wrapper li:first-child{
-            left: 0;
-        }
-        </style>
-        <script>
-            $(document).ready(function(){
-                // $(".wrapper li").eq(0).css("left","-100%")
-                // $(".wrapper li").eq(1).css("left",0)
+        .wrapper img{width: 100%;}
+        .wrapper ul{position: relative;}
+        .wrapper li{position: absolute;left: 100%;width: 100%;}
+        .wrapper li:first-child{left: 0;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            // $(".wrapper li").eq(0).css("left","-100%");
+            // $(".wrapper li").eq(1).css("left",0);
 
-                // $(".wrapper li").eq(0).animate({left:"-100%"},1000)
-                // $(".wrapper li").eq(1).animate({left:0},1000)
-        
+            // $(".wrapper li").eq(0).stop().animate({left:"-100%"},1000)
+            // $(".wrapper li").eq(1).stop().animate({left:0},1000)
 
 
-                setInterval(slider,4000)
+            setInterval(slider,4000)
 
-                let current = 0;
-                function slider(){
+            let current = 0;
+            function slider(){
+                $(".wrapper li").eq(current).css({left:0}).stop().animate({left:"-100%"},1500,"linear")
+                current++;
+                if(current == 5){current=0}
+                $(".wrapper li").eq(current).css({left:"100%"}).stop().animate({"left":"0"},1500,"linear")
+                console.log(current)
+            }
 
-                    // $(".wrapper li").eq(current).css("left",0).stop().animate({left:"-100%"})
-                    $(".wrapper li").eq(current).css({left:0}).css({left:"-100%"})
-                    current++;
-                    if(currnet == 5){current=0}
-                    $(".wrapper li").eq(current).css({left:"100%"}).stop().animate({left:0})
-                    // $(".wrapper li").eq(current).css({left:"100%"}).css({left:0})
-                    console.log(current)
-                }
-            })
-        </script>
+        })
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -68,6 +52,5 @@
             <li><img src="../../images/images05.jpg" alt="img5"></li>
         </ul>
     </div>
-
 </body>
 </html>

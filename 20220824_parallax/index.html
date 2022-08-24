@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <div class="layer p0" data-speed="4"></div>
+        <div class="layer p1" data-speed="5"></div>
+        <div class="layer p2" data-speed="4"></div>
+        <div class="layer p3" data-speed="7"></div>
+        <div class="layer p4" data-speed="8"></div>
+        <div class="layer p5" data-speed="20"></div>
+        <div class="layer p6" data-speed="40"></div>
+        <div class="layer p7" data-speed="60"></div>
+        <div class="layer p8" data-speed="70"></div>
+    </div>
+    <script>
+        let layer = document.querySelectorAll(".layer")
+
+        window.addEventListener("scroll",scrollView)
+        function scrollView(){
+            let scrollY = window.pageYOffset;
+
+            layer.forEach(function(item,index){
+
+                let speed = item.dataset.speed;
+
+                // item.style.transform = "translateY("+0+"px)"
+                item.style.transform = `translate3d(0,${scrollY/speed*4}px,0)`
+
+            })
+            
+            scrollView();
+        }
+    </script>
+</body>
+</html>
