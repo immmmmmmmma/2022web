@@ -38,24 +38,54 @@
             
             let current = 0;
             const liNum = $(".slide>li").length;
+            let overBtn = true;
+
             
-            $(".next").click(function(){
-                $(".slide>li").eq(current).css({left:0}).stop().animate({left:"-100%"})
-             
-                current++;
-                if(current == liNum) current=0;
-             
-                $(".slide>li").eq(current).css({left:"100%"}).stop().animate({left:0})
+            $(".next").click(function(e){
+                e.preventDefault();
+                
+                if (overBtn == ture){
+                    overBtn = false;
+                    $(".slide>li").eq(current).css({left:0}).stop().animate({left:"-100%"})
+                 
+                    current++;
+                    if(current == liNum) current=0;
+                 
+                    $(".slide>li")
+                        .eq(current).
+                        css({left:"100%"})
+                        .stop().
+                        animate({left:0},1000,function(){
+                            overBtn = true;
+                        })
+                }
             });
-            $(".prev").click(function(){
+ 
+            $(".prev").click(function(e){
+                e.preventDefault();
+
+                slider("prev")
+
                 $(".slide>li").eq(current).css({left:"0"}).stop().animate({left:"100%"})
              
                 current--;
                 if(current < 0) current = liNum -1;
             
                 $(".slide>li").eq(current).css({left:"-100%"}).stop().animate({left:0})
+
+
             })
         })
+
+        function slider(slide){
+            if(slide == "next"){
+                console.log("next")
+
+            }else{
+                console.log("next")
+                
+            }
+        }
 
         // setInterval(nextTrigger,3000)
         // function nextTrigger(){

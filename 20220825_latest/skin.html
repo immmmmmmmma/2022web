@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skin</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .mylatest{
+            margin: 0 auto;
+            width: 1200px;
+            padding: 20px;
+            display: flex;
+        }
+        .mylatest .title{
+            width: 250px;
+            height: 200px;
+            flex:0 0 auto;
+        }
+        .mylatest .title h3{
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .mylatest .title .mIcon{
+            display: block;
+            width: 23px;
+            height: 23px;
+            text-indent: -99999px;
+            background-image: url(./img/more_btn.png);
+            background-position: 0 -23px;
+        }
+        .mylatest .title .mIcon:hover{
+            background-position: 0 0;
+        }
+        .mylatest .content{
+            display: flex;
+            flex: 1 1 auto;
+            gap: 50px;
+        }
+        .mylatest .content a{
+            font-size: 22px;
+            line-height: 28px;
+            font-weight: initial;
+        }
+        .mylatest .content a{
+            display: block;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .mylatest .content p{
+            align-self: flex-end;
+        }
+        .mylatest .content li:after{
+            content: "";
+            display: block;
+            width: 1px;
+            height: 200px;
+            background: #999;
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform:translateY(-50%);
+        }
+        .mylatest .content li:first-child:after{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="mylatest">
+        <div class="title">
+            <h3><a href="#">공지사항</a></h3>
+            <a href="#" class="mIcon">icon</a>
+        </div>
+        <ul class="content">
+            <li>
+                <a href="#">
+                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, voluptas.</h4>
+                    <p>2022-8-25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, voluptas.</h4>
+                    <p>2022-8-25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, voluptas.</h4>
+                    <p>2022-8-25</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</body>
+</html>
