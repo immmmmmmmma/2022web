@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide02_basic</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .wrapper{
+            width: 500px;margin: 0 auto;
+            background: skyblue;
+        }
+        .wrapper img{width: 100%;}
+        .wrapper ul{
+            position: relative;
+            overflow: hidden;width: 500px;height: 200px;
+        }
+        .wrapper li{position: absolute;left: 100%;width: 100%;}
+        .wrapper li:first-child{left: 0;}
+        .wrapper .btn{margin-bottom: 10px;}
+        .wrapper .pager{display: flex;gap:10px}
+        .wrapper .pager span{
+            display: block;
+            width: 15px;height: 15px;text-indent: -9999px;
+            background: #333;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .wrapper .pager span.active{background: red;}
+    </style>
+    <script>
+        $(document).ready(function(){
+
+            let current = 0;
+            let nextCurrent = 0;
+            const liNum = $(".slide>li").length;
+            let overBtn = true;
+            const sItem = $(".slide>li");
+
+
+            $(".next").click(function(){
+                if(overBtn == true){
+                    overBtn = false;
+                    nextCurrent = current + 1;
+                    if(nextCurrent == liNum) nextCurrent=0;
+                    slider("next");
+                }
+            })
+            $(".prev").click(function(){
+                if(overBtn == true){
+                    overBtn = false;
+                    nextCurrent = current - 1;
+                    if(nextCurrent<0) nextCurrent = liNum - 1;
+                    slider("prev");
+                }
+            })
+
+            function slider(view){
+                if(view == "next"){
+                    sItem.eq(current).css({left:0}).stop().animate({left:"-100%"},500)
+                    sItem.eq(nextCurrent).css({left:"100%"}).stop().animate({left:0},500,function(){overBtn=true})
+                }else{
+                    sItem.eq(current).css({left:0}).stop().animate({left:"100%"},500);
+                    sItem.eq(nextCurrent).css({left:"-100%"}).stop().animate({left:0},500,function(){overBtn=true})
+                }
+                current = nextCurrent;
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="slide">
+            <li><img src="../../images/images01.jpg" alt="img1"></li>
+            <li><img src="../../images/images02.jpg" alt="img2"></li>
+            <li><img src="../../images/images03.jpg" alt="img3"></li>
+            <li><img src="../../images/images04.jpg" alt="img4"></li>
+            <li><img src="../../images/images05.jpg" alt="img5"></li>
+        </ul>
+        <div class="btn">
+            <a href="#" class="prev">prev</a>
+            <a href="#" class="next">next</a>
+        </div>
+        <div class="pager">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
