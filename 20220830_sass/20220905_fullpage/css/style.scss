@@ -1,0 +1,40 @@
+$fcolor1:#333;
+$pcolor1:#fff;
+*{margin: 0;padding: 0;}
+a:link,a:visited{
+    text-decoration: none;
+    color: $fcolor1;
+}
+ul,li{list-style: none;}
+
+// nav
+.navTop{
+    position: fixed;
+    z-index: 1;
+    background-color: $pcolor1;
+    h1{}
+    .gnb{
+        margin-left: auto;
+        &.active{background: skyblue;}
+        ul{display: flex;height: 100%;}
+        li{
+            height: 100%;
+            &:hover,&.active{background: blueviolet;}
+            a{
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 30px;
+            }
+        }
+    }
+}
+
+.wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

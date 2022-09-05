@@ -1,0 +1,62 @@
+a:link, a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.nav {
+  width: 500px;
+  margin: 0 auto;
+}
+.nav > li {
+  height: 40px;
+}
+.nav > li a {
+  display: block;
+  line-height: 40px;
+}
+.nav > li:hover {
+  background: skyblue;
+}
+.nav > li.active {
+  background: blue;
+}
+.nav:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.btn-green, .btn-red, .btn-blue {
+  width: 100px;
+  height: 40px;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  line-height: 40px;
+  text-align: center;
+}
+.btn-green:hover, .btn-red:hover, .btn-blue:hover {
+  background: skyblue;
+}
+
+.btn-blue {
+  background: blue;
+}
+
+.btn-red {
+  background: green;
+}
+
+.btn-green {
+  background: red;
+}
+
+h2 {
+  font-size: 3em;
+  color: red;
+  background: green;
+}/*# sourceMappingURL=style.css.map */
