@@ -1,0 +1,177 @@
+// color 
+$fcolor1:#333;
+$fcolor2:#fff;
+$pColor1:#eee;
+$shadow1:0 0 10px rgba(0,0,0,.5);
+
+
+*{margin: 0;padding: 0;}
+a:link,a:visited{text-decoration: none;color:$fcolor1}
+ul,li{list-style: none;}
+
+h2{font-size: 3em;color:$fcolor2;text-shadow: $shadow1;}
+
+// nav
+.navTop{
+    position: fixed;z-index: 1;
+    width: 100%;
+    background-color: $pColor1;
+    display: flex;
+    h1{}
+    .gnb{
+       margin-left: auto;
+       ul{
+        display: flex;height: 100%;
+        } 
+       li{
+        height: 100%;
+        &:hover,&.active{background: skyblue;}
+        a{
+            height: 100%;
+            padding: 0 30px;
+            display: flex;justify-content: center;align-items: center;
+        }
+       }
+    }
+}
+
+
+
+
+.wrap{
+    width: 100%;height: 100vh;
+    display: flex;justify-content: center;align-items: center;
+    div{
+        position: absolute;
+        &.txt1{
+            transform: translateY(200px);
+            opacity: 0;
+        }
+        &.txt2{
+            h2:nth-child(1){
+                transform: translateX(-200px);
+                opacity:0;
+            }
+            h2:nth-child(2){
+                transform: translateX(200px);
+                opacity:0;
+            }
+        }
+        &.txt3{
+            h2:nth-child(1){
+                transform: translateY(200px);
+                opacity: 0;
+            }
+            h2:nth-child(2){
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+        }
+        @keyframes txtAni1 {
+            30%{transform: translateY(-20px);opacity: 1;}
+            80%{transform: translateY(0);opacity: 1;}
+            100%{transform: translateY(0);opacity: 0;}
+        }
+        @keyframes txtAni21 {
+          30%{transform: translateX(20px);opacity: 1;}
+          70%{transform: translateX(0);opacity: 1;}
+          100%{transform: translateX(0);opacity: 0;}
+        }
+        @keyframes txtAni22 {
+          30%{transform: translateX(-20px);opacity: 1;}
+          70%{transform: translateX(0);opacity: 1;}
+          100%{transform: translateX(0);opacity: 0;}
+        }
+        @keyframes txtAni31 {
+          30%{transform: translateY(10px);opacity: 0;}
+          60%{transform: translateY(-10px);opacity: 1;}
+          100%{transform: translateY(0);opacity: 1;}
+        }
+        @keyframes txtAni32 {
+          30%{transform: translateY(-10px);opacity: 0;}
+          60%{transform: translateY(10px);opacity: 1;}
+          100%{transform: translateY(0);opacity: 1;}
+        }
+    }
+    &.move{
+        .txt1{
+            animation: txtAni1 1.5s alternate forwards;
+        }
+        .txt2{
+            h2:nth-child(1){
+                animation: txtAni21 2.3s alternate forwards;
+                animation-delay: 1.5s;
+            }
+            h2:nth-child(2){
+                animation: txtAni22 2.3s alternate forwards;
+                animation-delay: 1.8s;
+            }
+        }
+        .txt3{
+            h2:nth-child(1){
+                animation: txtAni31 2s alternate forwards;
+                animation-delay: 3.5s;
+            }
+            h2:nth-child(2){
+                animation: txtAni32 1.5s alternate forwards;
+                animation-delay: 4s;
+            }
+        }
+    }
+}
+
+.page1{
+    .txtWrap{
+        transform:translateY(100px);
+        transition: 0.3s;
+        opacity: 0;
+        &.move{
+            transform:translateY(0);
+            opacity: 1;
+        }
+    }
+}
+.page2{
+    .txtWrap{
+        transform:translateY(-100px);
+        transition: 0.3s;
+        opacity: 0;
+        &.move{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+.page4{
+    .txtWrap{
+        transform:translateY(100px);
+        transition: 0.3s;
+        opacity: 0;
+        &.move{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+.section{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.page1{
+        background-image: url(../images/bg1.jpg);
+        .scrollBtn{
+            position: absolute;
+            left:50%;transform:translateX(-50%);
+            animation:xScroll 1s infinite alternate
+        }
+
+        @keyframes xScroll {
+            0%{bottom: 20px;}
+            100%{bottom: 50px;}
+        }
+    }
+    &.page2{background-image: url(../images/bg2.jpg);}
+    &.page3{background-image: url(../images/bg3.jpg);}
+    &.page4{background-image: url(../images/bg4.jpg);}
+}
