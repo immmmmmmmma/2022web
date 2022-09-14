@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg03</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .box{
+            background: #ddd;
+            width: 300px;
+            height: 200px;
+        }
+        .txt1{
+            stroke: #333;
+            font-size: 3em;
+            font-weight: 500;
+        }
+        .cir1{
+            fill: forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <svg height="200" width="300">
+            <defs>
+                <mask id="mTxt">
+                    <circle cx="50" cy="25" r="12" class="cir1"></circle>
+                </mask>
+            </defs>
+            <g mask="url(#mTxt">
+                <text x="0" y="30" fill="red" class="txt1">I love <tspan x="0" y="90"> SVG!</tspan></text>
+            </g>
+          </svg>
+    </div>
+       
+<script>
+    const cirElem = document.querySelector(".cir1");
+    const boxElem = document.querySelector(".box");
+
+    boxElem.addEventListener("mousemove",function(e){
+        cirElem.style.transform = `translate(${e.clientX-30}px,${e.clientY-30}px)`
+
+    })
+
+</script>
+</body>
+</html>
