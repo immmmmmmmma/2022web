@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view03</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(images/back-img.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            perspective: 1000px;
+        }
+        .cardWrap{
+            width: 200px;
+            height: 308px;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            display: flex;
+        }
+        .cardWrap img{
+            display: block;
+        }
+        .card{
+            width: 200px;
+            height: 380px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: 0.6s;
+
+
+        }
+        .card div{
+            position: absolute;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+
+        }
+        .card .card-front{
+            z-index: 1;
+        }
+        .card .card-back{
+            transform: rotateY(0deg);
+        }
+        .cardWrap.active:hover .card{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="cardWrap active">
+        <div class="card">
+            <div class="card-front">
+                <img src="images/k.png" alt="">
+            </div>
+            <div class="card-back">
+                <img src="images/back.jpg" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-front">
+                <img src="images/j.png" alt="">
+            </div>
+            <div class="card-back">
+                <img src="images/back.jpg" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-front">
+                <img src="images/q.png" alt="">
+            </div>
+            <div class="card-back">
+                <img src="images/back.jpg" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-front">
+                <img src="images/a.jpg" alt="">
+            </div>
+            <div class="card-back">
+                <img src="images/back.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const card = document.querySelectorAll("cardWrap");
+        for(let i=0;i<card.length;i++){
+            card[i].addEventListener("click",function(){
+                card.classList.toggle("active")
+            })            
+        }
+    </script>
+</body>
+</html>

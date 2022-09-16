@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #ddd;
+        }
+
+        
+        .wrap {
+            background: skyblue;
+            width: 200px;
+            height: 500px;
+            position: relative;
+        }
+        
+        .body {
+            position: absolute;
+            left: 40px
+        }
+        .arm1 {
+            width: 114px;
+            height: 197px;
+            transform-origin: 80px 15px;
+            transform: rotate(30deg);
+            position: absolute;
+            top:101px;left: 9px;
+            /* display: none; */
+            animation:a1Ani 0.5s alternate infinite linear
+        }
+        .arm2 {
+            width: 114px;
+            height: 197px;
+            transform-origin: 80px 15px;
+            transform: rotate(30deg);
+            position: absolute;
+            top:101px;left: 9px;
+            animation:a2Ani 0.5s  alternate infinite linear;
+            animation-delay: 0.5s;
+        }
+        .foot1{
+            width: 113px;height: 346px;
+            transform-origin: 35px 41px;
+            transform: rotate(359deg);
+            position: absolute;
+            top: 193px;left: 43px;
+        }
+        .foot2{
+            width: 113px;height: 346px;
+            transform-origin: 35px 41px;
+            transform: rotate(330deg);
+            position: absolute;
+            top: 193px;left: 43px;
+        }
+
+        @keyframes a1Ani {
+            to{ 
+                transform: rotate(-80deg);
+            }
+        }
+        @keyframes a2Ani {
+            to{ 
+                transform: rotate(-80deg);
+            }
+        }
+
+        .wrap{ 
+            transform: translate(0,0);
+            animation:wAni 0.3s alternate infinite
+        }
+        @keyframes wAni {
+            100%{ 
+                transform: translate(0,10px);
+            }
+        }
+
+        .wAni{ 
+            transform: translate(0px,0);
+            
+        }
+
+
+
+        </style>
+</head>
+
+<body>
+
+
+    <div class="wAni">
+        <div class="wrap">
+            <div class="arm2">
+                <img src="img/arm01.png" alt="">
+            </div>
+            <div class="foot2">
+                <img src="img/foot01.png" alt="">
+            </div>
+            <div class="body">
+                <img src="img/body01.png" alt="">
+            </div>
+            <div class="foot1">
+                <img src="img/foot01.png" alt="">
+            </div>
+            <div class="arm1">
+                <img src="img/arm01.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
