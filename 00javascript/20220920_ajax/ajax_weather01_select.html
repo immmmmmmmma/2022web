@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://127.0.0.1:5502/00javascript/20220920_ajax/ajax04_weater.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax04_weater</title>
+    <link rel="stylesheet" href="./ajax_weather01_select_files/reset.css">
+    <script src="./ajax_weather01_select_files/jquery.min.js.다운로드"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <select name="inpCity">
+        <option value="seoul">서울</option>
+        <option value="incheon">인천</option>
+        <option value="busan">부산</option>
+    </select>
+    <div class="wInfo">
+        <h1 class="city">Seoul</h1>
+        <div class="wrap">
+            <p class="w_id">튼구름</p>
+            <div class="img"><img src="./ajax_weather01_select_files/04d@2x.png"></div>
+            <p class="temp">23℃</p>
+            <!-- <div class="tempWrap">
+                <p class="max">최대</p>
+                <p class="min">최소</p>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        const myKey = "f6cbcd780f1930010f874b76a769fd2e";
+        let loc = "seoul";
+        $.ajax({
+            url:"https://api.openweathermap.org/data/2.5/weather?q="
+            + loc +"&APPID="+myKey+"&units=metric&lang=kr",
+            dataType:"json",
+            success:locData,
+
+        })
+        function locData(data){
+            console.log("data.main.temp");
+            let city = data.name;
+            let weather = data.weather[0].description;
+            let icon = data.weather[0].icon;
+            let iUrl = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png">`
+            let temp = parseInt(data.main.temp)+"&#x2103"
+            // parseInt <-정수표현 &#x2103 <-화씨를 도씨 표현
+            let tempMa = data.main.temp_max
+            let tempMi = data.main.temp_min
+
+            $(".city").html(city);
+            $(".w_id").html(weather);
+            $(".img").html(iUrl);
+            $(".temp").html(temp);
+            // $(".max").html(tempMa);
+            // $(".min").html(tempMi);
+
+
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

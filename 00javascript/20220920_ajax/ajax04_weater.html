@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax04_weater</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <select name="inpCity" class="inpCity">
+        <option value="seoul">서울</option>
+        <option value="incheon">인천</option>
+        <option value="busan">부산</option>
+    </select>
+    <div class="wInfo">
+        <h1 class="city">seoul</h1>
+        <div class="wrap">
+            <p class="w_id">clear</p>
+            <div class="img">icon</div>
+            <p class="temp">22</p>
+            <!-- <div class="tempWrap">
+                <p class="max">최대</p>
+                <p class="min">최소</p>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        const myKey = "f6cbcd780f1930010f874b76a769fd2e";
+        
+        loca("seoul");
+        $(".inpCity").change(function(){
+            $(".inpCity option:selected").each(function(){
+                loca($(this).val())
+            })
+        })
+
+
+        function loca(loc){
+            $.ajax({
+                url:"https://api.openweathermap.org/data/2.5/weather?q="
+                + loc +"&APPID="+myKey+"&units=metric&lang=kr",
+                dataType:"json",
+                success:locData,
+
+            })
+        }
+
+
+    
+        function locData(data){
+            console.log("data.main.temp");
+            let city = data.name;
+            let weather = data.weather[0].description;
+            let icon = data.weather[0].icon;
+            let iUrl = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png">`
+            let temp = parseInt(data.main.temp)+"&#x2103"
+            // parseInt <-정수표현 &#x2103 <-화씨를 도씨 표현
+            let tempMa = data.main.temp_max
+            let tempMi = data.main.temp_min
+
+            $(".city").html(city);
+            $(".w_id").html(weather);
+            $(".img").html(iUrl);
+            $(".temp").html(temp);
+            // $(".max").html(tempMa);
+            // $(".min").html(tempMi);
+
+
+        }
+    </script>
+</body>
+</html>

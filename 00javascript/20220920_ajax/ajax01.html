@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax01</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+        $.ajax({
+            url:"data/book.json",
+            method:"GET",
+            dataType:"json"
+        })
+            .done(function(data){
+                console.log(data.book[0].title);
+                let text = "";
+                for(let i=0;i<data.book.length;i++){
+                    text += `<li> ${data.book[i].title}</li>`
+                }
+                $(".box").html(text);
+                
+            })
+            .fail(function(xhr,status,error){
+                console.log("error");
+            })
+
+            $.ajax().done(viewData).fall()
+            
+            function viewData(){}
+    </script>
+</body>
+</html>
