@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax05_wCard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        html,body{ 
+            height: 100%;
+        }
+        *{ 
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+        }
+        body{ 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(https://source.unsplash.com/1600x900/?seoul);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+
+        .card{ 
+            width: 300px;
+            background: #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .search{ 
+            display: flex;
+            gap:10px
+        }
+        .search .inp-search{ 
+          flex:1 0 auto;
+          padding: 10px;
+        }
+        .search .btnIcon{ 
+            width: 30px;height: 30px;
+            background: #000;
+            color:white;
+            border-radius: 50%;
+            display: flex;justify-content: center;align-items: center;
+            align-self: center;
+        }
+        h2.city{ 
+            position: absolute;
+            top: -53px;
+            font-size: 3em;
+            color:white;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="search">
+        <input type="text" class="inp-search" placeholder="search">
+        <div class="btnIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="weather">
+        <h2 class="city">Seoul</h2>
+        <h1 class="temp">28°C</h1>
+        <div class="iconInfo">
+            <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon">
+            <div class="desc">Cloudy</div>
+        </div>
+        <div>humidity <span class="humidity">60%</span> </div>
+        <div>Wind speed <span class="wind">6.2km/h</span> </div>
+    </div>
+</div>
+<script>
+    // $.ajax({
+    //     url:"dd",
+    //     dataType:"json",
+    //     data:{},
+    //     beforeSend:onBefore,
+    //     success:onSuccess,
+    //     error:onError
+    // })
+
+    // function onBefore(){}
+    // function onSuccess(data){}
+    // function onError(xhr,status,error){}
+
+
+    const myid = "4eedfeb184dc7cb08af6c0bd529c48b9";
+
+    wSearch("incheon");
+    function wSearch(loc){
+        $.ajax({
+            url:"https://api.openweathermap.org/data/2.5/weather?q="+ loc +"&appid="+myid,
+            dataType:"json",
+            data:{units:"metric"},
+            beforeSend:onBefore,
+            success:onSuccess,
+            error:onError
+        })
+    }
+
+    function onBefore(){}
+    function onSuccess(data){
+        console.log(data)
+        let city = data.name;
+        let temp = Math.floor(data.main.temp)+"°C"; 
+        // Math.floor():소수버림
+        // Math.ceil():소수올림
+        // Math.round():소수반올림
+        let icon = data.weather[0].icon;
+        let desc = data.weather[0].description;
+        let humidity = data.main.humidity + "%";
+        let wind = data.wind.speed + "km/h";
+
+        $(".city").html(city);
+        $(".temp").html(temp);
+        $(".icon").attr("src",`https://openweathermap.org/img/wn/${icon}.png`);
+        $(".desc").html(desc);
+        $(".humidity").html(humidity);
+        $(".wind").html(wind);
+
+        $("body").css("background-image",`url(https://source.unsplash.com/1600x900/?${city})`)
+    }
+    function onError(xhr,status,error){
+        console.log("error")
+        alert("지역확인후 입력하세요!!!")
+    }
+
+
+    $(".btnIcon").click(function(){
+        let value = $(".inp-search").val();
+
+        if(value == ""){
+            alert("지역을 입력하세요")
+        }else{
+            wSearch(value)
+            $(".inp-search").val("").focus()
+        }
+    })
+    
+    $(".search").keyup(function(e){
+        if(e.key == "Enter"){
+            console.log("enter ok");
+            let value = $(".inp-search").val();
+
+            if(value == ""){
+                alert("지역을 입력하세요")
+            }else{
+                wSearch(value)
+                $(".inp-search").val("").focus()
+            }
+        }
+    })
+</script>
+</body>
+</html>

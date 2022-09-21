@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax05_weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        /* reset  */
+          *{ 
+            margin: 0;padding: 0;
+        }
+        li{ 
+            list-style: none;
+        }
+        .clearfix:after{ 
+            content:"";display: block;clear: both;
+        }
+        a:link,a:visited{ 
+            text-decoration: none;
+            color:#333
+        }
+
+        html,body{ 
+            height: 100%;
+        }
+        body{ 
+            display: flex;justify-content: center;align-items: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color:skyblue;
+        }
+
+        .card{ 
+            width: 300px;height: 300px;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 20px;
+            color:white
+
+        }
+        .search{ 
+            display: flex;
+            gap:10px
+        }
+        .search .inp-search{ 
+            flex:1 0 auto
+        }
+        .search .btnIcon{ 
+            width: 30px;height: 30px;
+            background: white;
+            border-radius: 15px;
+            display: flex;justify-content: center;align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" class="inp-search" placeholder="search">
+            <div class="btnIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+        <div class="weather loading">
+            <h2 class="city">Weather in Denver</h2>
+            <h1 class="temp">51°C</h1>
+            <div class="flex">
+              <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+              <div class="description">Cloudy</div>
+            </div>
+            <div class="humidity">Humidity: 60%</div>
+            <div class="wind">Wind speed: 6.2 km/h</div>
+          </div>
+
+    </div>
+
+
+    <script>
+    const myid = "4eedfeb184dc7cb08af6c0bd529c48b9";
+    
+
+    wSearch("seoul")
+
+    function wSearch(loc){
+        $.ajax({
+            url:"https://api.openweathermap.org/data/2.5/weather?q="+ loc +"&appid="+myid+"&units=metric",
+            dataType:"json",
+        }).done(locData).fail(function(){
+            alert("자료가 없습니다.")
+            $(".inp-search").val("").focus()
+        })
+    }
+    function locData(data){
+        console.log(data)
+        let city = data.name;
+        let weather = data.weather[0].description;
+        let icon = data.weather[0].icon;
+        let iUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`
+        let temp = parseInt(data.main.temp)+"&#x2103";
+        let tempMa = data.main.temp_max;
+        let tempMi = data.main.temp_min;
+
+        $(".city").html(city);
+        $(".w_id").html(weather);
+        $(".icon").attr("src",iUrl);
+        $(".temp").html(temp);
+        $(".description").html(weather);
+        // $(".max").html(tempMa);
+        // $(".min").html(tempMi);
+        $("body").css("background-image",`url('https://source.unsplash.com/1600x900/?${city}')`)
+
+
+    }
+
+    $(".btnIcon").click(function(){
+        let sValue = $(".inp-search").val()
+        if(sValue == ""){
+            alert("도시정보가 없습니다.")
+        }else{
+            wSearch(sValue)
+        }
+        
+    })
+    $(".search").keyup(function(e){
+        if (event.key == "Enter") {
+            let sValue = $(".inp-search").val()
+            if(sValue == ""){
+                alert("도시정보가 없습니다.")
+            }else{
+                wSearch(sValue)
+                $(".inp-search").val("").focus()
+            }
+        }
+    })
+    </script>
+</body>
+</html>
