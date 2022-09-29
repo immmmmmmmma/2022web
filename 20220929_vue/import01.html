@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>import01</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <button @click="count++">클릭</button>
+        <button @click="count=0">초기화</button>
+        {{count}}
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module">
+        import { noticeData,newsData,snsData } from "./data.js";
+
+        // const { creatApp } = Vue;
+
+        // createApp({
+        //     data(){
+        //         return {
+        //             message:noticeData,
+        //         }
+        //     }
+        // }).mount("#app");
+
+        Vue.createApp({
+            data(){
+                return {
+                    count:0,
+                }
+            }
+        }).mount("#app")
+
+
+        // console.log(nocnoticeData,newsData,snsData)
+
+    </script>
+
+    <script src="data.js"></script>
+</body>
+</html>

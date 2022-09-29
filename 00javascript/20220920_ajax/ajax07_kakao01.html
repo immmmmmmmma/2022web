@@ -50,6 +50,15 @@
             border-radius:50%;
             align-self: center;
         }
+        .paging a{ 
+            
+            margin-right: 10px;
+        }
+        .paging { 
+            display: flex;
+            font-size: 2em;
+            cursor:pointer
+        }
     </style>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -81,22 +90,25 @@
             </li> -->
             
         </ul>
-        <div class="pageing">
-            <a href="#" onclick="sView('이효리',1)">1</a>
-            <a href="#" onclick="sView('이효리',2)">2</a>
-            <a href="#" onclick="sView('이효리',3)">3</a>
-            <a href="#" onclick="sView('이효리',4)">4</a>
-            <a href="#" onclick="sView('이효리',5)">5</a>
+        <div class="paging">
+            <div class="prev"><</div>
+            <div class="pageWrap">
+
+            </div>
+            <div class="next">></div>
+            
+
         </div>
     </div>
     <script>
-        let page=1;
+        let page=1; //50page 
+        let size=5;  //출력개수 50list
         let query;
         let kakaoUrl = 'https://dapi.kakao.com/v2/search/web'
 
 
 
-        sView("이효리")
+        //sView("코로나")
 
         function sView(query){
             axios
@@ -109,16 +121,19 @@
             return kakaoUrl;
         }
 
-        function getParmas(query){
+        function getParmas(query,page){
             return {
-                params:{ query:query, size:10, page:page },
+                params: { query:query, size:size, page:page, sort:"recency"},
                 headers: { Authorization: "KakaoAK 2cd14d51ce29ccd0eb25d4629eb208db" }
             }
         }
         
 
         function onResult(v) {
-            //console.log(v.data.documents);
+            console.log(v.data.meta.pageable_count);
+
+            setPager(v.data.meta.pageable_count);//paging function
+
             let sData = v.data.documents;
 
             // for(let i=0;i<sData.length;i++){
@@ -127,8 +142,8 @@
             
             let sList = ""
             sData.forEach(function(item,i){
-                 console.log(sData[i])
-                console.log(item.datetime)
+                 //console.log(sData[i])
+                //console.log(item.datetime)
                 sList += `
                             <li>
                                 <h3><a href="${item.url}">${item.title}</a></h3>
@@ -152,8 +167,57 @@
         $(".btnIcon").click(function(){
             console.log($(".inp-search").val())
             query = $(".inp-search").val()
-            sView(value)
+            sView(query)
         })
+
+        function onPageClick(page){
+            axios
+            .get(getPath(),getParmas(query,page))
+            .then(onResult)
+            .catch(onError);
+        }
+
+        function setPager(totalRecord){
+            page = Number(page);
+
+            console.log(totalRecord)
+            let totalPage = Math.ceil(totalRecord / size);
+            let pagerCnt = 10; //페이지개수 1 2 3 4 5
+            let startPage;
+            let endPage;
+
+            startPage = Math.floor((page - 1) / pagerCnt) * pagerCnt + 1;
+            endPage = startPage + pagerCnt - 1;
+
+            let pageNum = "";
+            for(let i=startPage;i<=endPage;i++){
+                if(page === i){
+                    pageNum += `<a href="#" onclick="onPageClick(${i})" class="active">${i}</a>`
+                }else{
+                    pageNum += `<a href="#" onclick="onPageClick(${i})">${i}</a>`
+                }
+            }
+
+            if(totalPage === 0){
+                $(".pageWrap").empty().html("자료가 없음");
+            }else{
+
+                $(".pageWrap").html(pageNum);
+            }
+
+        }
+        $(".next").click(function(){
+           page = page + 1;
+           console.log(page)
+           axios
+            .get(getPath(),getParmas(query,page))
+            .then(onResult)
+            .catch(onError);
+        })
+
+
+
+
     </script>
     
 </body>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+       html,body{
+        height: 100vh;
+       }
+       body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       #app li{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+       .wrap{
+        width: 250px;
+       }
+       .wrap img{
+        width: 100%;
+       }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,i) in noticeData">
+                <div class="wrap"><img v-bind:src="`img/${item.img}`" alt="" class="img"></div>
+                {{item.title}}
+            </li>
+        </ul>
+        <!-- {{noticeData,newsDzata,snsData}} -->
+    </div>
+
+    
+    
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src=""></script> -->
+    <script type="module">
+        import { noticeData } from "./data.js";
+
+        const myView = {
+            data(){
+                return {
+                    noticeData:noticeData,
+                    // newsData:newsData,
+                    // snsData:snsData,
+                }
+            }
+        }
+        Vue.createApp(myView).mount("#app")
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .tab {
+            display: flex;
+        }
+        .tab li{
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .tab li.active{
+            background: skyblue;
+        }
+        .tab li:hover{
+            background: goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li @click="tab=1" v-bind:class="{active:tab==1}">tab1</li>
+            <li @click="tab=2" :class="{active:tab==2}">tab2</li>
+            <li @click="tab=3" :class="{active:tab==3}">tab3</li>
+        </ul>
+        <div class="content">
+            <div v-if="tab==1">
+                1.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, perspiciatis.
+            </div>
+            <div v-if="tab==2">
+                2.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, perspiciatis.
+            </div>
+            <div v-if="tab==3">
+                3.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, perspiciatis.
+            </div>
+        </div>
+        {{tab}}
+    </div>
+    
+    
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src=""></script> -->
+    <script>
+        const TabView = {
+            data(){
+                return {
+                    tab:3,
+                }
+            }
+        }
+        Vue.createApp(TabView).mount("#app")
+    </script>
+</body>
+</html>
