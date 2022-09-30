@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css"
+        integrity="sha512-15OzXDrYC/wTgcjNDIx6+2LiAHCPnS9DiKQj/dhgdRMpdW+W4AoSjxism+gRaDobBaFN+UONPGic1ttu5mpWxg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a:visited,
+        a:link {
+            text-decoration: none;
+            color: #333
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .container {
+            width: 1280px;
+            margin: 0 auto
+        }
+
+    </style>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="app">
+
+
+        <div class="slideWrap">
+            <div class="container slide">
+                <h3>재단소식</h3>
+                <div class="tabWrap">
+                    <ul>
+                        <li v-bind:class="{active:tab==1}" @click="tab=1">공지사항</li>
+                        <li v-bind:class="{active:tab==2}" @click="tab=2">뉴스룸</li>
+                        <li v-bind:class="{active:tab==3}" @click="tab=3">소셜미디어</li>
+                    </ul>
+                </div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide item" v-for="(item,i) in noticeData" v-if="tab==1">
+                            <div class="img" v-bind:style="{'background-image':`url(img/${item.img})`}"></div>
+                            <div class="txtWrap">
+                                <div class="wrap">
+                                    <h3>{{item.title}}</h3>
+                                    <p>{{item.content}}</p>
+                                </div>
+                                <div class="date">
+                                    {{item.cate}} / {{item.date}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide item" v-for="(item,i) in newsData" v-if="tab==2">
+                            <div class="img" v-bind:style="{'background-image':`url(img/${item.img})`}"></div>
+                            <div class="txtWrap">
+                                <div class="wrap">
+                                    <h3>{{item.title}}</h3>
+                                    <p>{{item.content}}</p>
+                                </div>
+                                <div class="date">
+                                    {{item.cate}} / {{item.date}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide item" v-for="(item,i) in snsData" v-if="tab==3">
+                            <div class="img" v-bind:style="{'background-image':`url(img/${item.img})`}"></div>
+                            <div class="txtWrap">
+                                <div class="wrap">
+                                    <h3>{{item.title}}</h3>
+                                    <p>{{item.content}}</p>
+                                </div>
+                                <div class="date">
+                                    {{item.cate}} / {{item.date}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.min.js"
+        integrity="sha512-dPYTaB+Ip4gAl9vo6U0jSmI8v1AZKjPKH367mfo7pR5gLf1IKpjm3bIXIwm+MmYWEf0eiBEWSBqE+MdKUx0jfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module">
+        import { noticeData, newsData, snsData } from "./data.js";
+        const webApp = {
+            data() {
+                return {
+                    tab:1,
+                    noticeData: noticeData,
+                    newsData:newsData,
+                    snsData:snsData
+                }
+            }
+            
+        }
+        Vue.createApp(webApp).mount("#app");
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            observer: true,
+            observeParents: true,
+        });
+    </script>
+</body>
+
+</html>
