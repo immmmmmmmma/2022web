@@ -62,7 +62,7 @@ const newsData = [
         title:"넷마블장애인선수단, ‘2022 추계전국장애인조정대회’에서 총 17개 메달 획득",
         img:"n01.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -71,7 +71,7 @@ const newsData = [
         title:"게임아카데미 부트캠프 2기 온라인 수료식 개최",
         img:"n02.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -80,7 +80,7 @@ const newsData = [
         title:"넷마블게임박물관 건립준비캠페인",
         img:"n03.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -89,7 +89,7 @@ const newsData = [
         title:"넷마블장애인선수단, ‘2022 추계전국장애인조정대회’에서 총 17개 메달 획득",
         img:"n01.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -98,7 +98,7 @@ const newsData = [
         title:"게임아카데미 부트캠프 2기 온라인 수료식 개최",
         img:"n02.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -107,7 +107,7 @@ const newsData = [
         title:"넷마블게임박물관 건립준비캠페인",
         img:"n03.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
 ]
@@ -119,7 +119,7 @@ const snsData = [
         title:"<제 12회 게임콘서트> 바로보기",
         img:"s01.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -128,7 +128,7 @@ const snsData = [
         title:"<제 11회 게임콘서트 2부> Q&A",
         img:"s02.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -137,7 +137,7 @@ const snsData = [
         title:"<제 11회 게임콘서트 2부> 바로보기",
         img:"s03.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -146,7 +146,7 @@ const snsData = [
         title:"<제 12회 게임콘서트> 바로보기",
         img:"s01.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -155,7 +155,7 @@ const snsData = [
         title:"<제 11회 게임콘서트 2부> Q&A",
         img:"s02.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
     {
@@ -164,7 +164,7 @@ const snsData = [
         title:"<제 11회 게임콘서트 2부> 바로보기",
         img:"s03.jpg",
         content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, praesentium!",
-        rul:"http://www.naver.com",
+        url:"http://www.naver.com",
         data:"2022.09.23"
     },
 ]
