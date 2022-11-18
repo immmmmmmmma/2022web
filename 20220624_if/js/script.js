@@ -46,7 +46,7 @@ if(userInput != "가위" && userInput != "바위" && userInput != "보"){
         }else{
             result = "컴이 이겼습니다."
         }
-    }else{ // 여긴 보입니다.
+    }else{ // 보
         if(comInput == "가위"){
             result = "컴이 이겼습니다.";
         }else if(comInput == "바위"){
